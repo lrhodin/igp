@@ -1,0 +1,12 @@
+<table>
+  <caption><h1>Video Library</h1></caption>
+  <% @videos.each do |video| %>
+    <tr>
+      <td><iframe src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></td>
+      <td>
+        <h2><%= video.name %><br></h2>
+        <%= video.description %>
+      </td>
+    </tr>
+  <% end %>
+</table>
