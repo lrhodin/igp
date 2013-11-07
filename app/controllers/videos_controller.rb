@@ -21,14 +21,43 @@ class VideosController < ApplicationController
   def edit
   end
 
+  # GET /videos/update
+  def sync
+    albums = Vimeo::Simple::User.albums("coloradoigp")
+    albums.each { |album|
+      album_name = album["title"]
+      videos = Vimeo::Simple::Album.videos(album["id"])
+      videos.each { |video_info|
+        if Video.where(:vid => video_info["id"]).blank?
+          video = Video.new
+          video.name = video_info["title"]
+          video.vid = video_info["id"]
+          video.description = video_info["description"]
+          video.date = video_info["upload_date"]
+          video.thumb = video_info["thumbnail_medium"]
+          video.album = album_name
+          video.save
+        end
+      }
+    }
+
+    redirect_to videos_url
+  end
+
   # POST /videos
   # POST /videos.json
   def create
     @video = Video.new(video_params)
 
+    video_info = Vimeo::Simple::Video.info(@video.vid)
+    @video.name = video_info[0]["title"]
+    @video.description = video_info[0]["description"]
+    @video.date = video_info[0]["upload_date"]
+    @video.thumb = video_info[0]["thumbnail_medium"]
+
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        format.html { redirect_to videos_url, notice: 'Video was successfully created.' }
         format.json { render action: 'show', status: :created, location: @video }
       else
         format.html { render action: 'new' }
