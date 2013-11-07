@@ -1,8 +1,13 @@
 <table>
-  <caption><h1>Video Library</h1></caption>
+  <%= link_to 'All', 'library' %>
+  <% @albums.each do |album| %>
+    <%= link_to album, 'library?album='.concat(album) %>
+  <% end %>
+  <caption><h1>Video Library<br><%= @album %></h1></caption>
   <% @videos.each do |video| %>
     <tr>
-      <td><iframe src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></td>
+      <!--<td><iframe src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></td>-->
+      <td><img src=<%= video.thumb %>></td>
       <td>
         <h2><%= video.name %><br></h2>
         <%= video.description %>
