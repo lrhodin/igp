@@ -1,8 +1,16 @@
+<%= form_tag 'library', :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<%= link_to 'All', 'library' %>
+<% @albums.each do |album| %>
+  <%= link_to album, 'library?album='.concat(album) %>
+<% end %>
+
 <table>
-  <%= link_to 'All', 'library' %>
-  <% @albums.each do |album| %>
-    <%= link_to album, 'library?album='.concat(album) %>
-  <% end %>
   <caption><h1>Video Library<br><%= @album %></h1></caption>
   <% @videos.each do |video| %>
     <tr>
@@ -10,7 +18,7 @@
       <td><img src=<%= video.thumb %>></td>
       <td>
         <h2><%= video.name %><br></h2>
-        <%= video.description %>
+        <%= raw(video.description) %>
       </td>
     </tr>
   <% end %>
