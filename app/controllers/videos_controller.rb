@@ -21,7 +21,7 @@ class VideosController < ApplicationController
   def edit
   end
 
-  # GET /videos/update
+  # GET /videos/sync
   def sync
     albums = Vimeo::Simple::User.albums("coloradoigp")
     albums.each { |album|

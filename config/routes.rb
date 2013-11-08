@@ -2,6 +2,7 @@ Igp::Application.routes.draw do
   get "videos/sync"
   get "pages/library"
   get "pages/home"
+  get "pages/viewer"
   resources :videos
 
 
