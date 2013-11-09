@@ -1,3 +1,5 @@
+<%= javascript_include_tag :defaults %>
+
 <%= form_tag 'library', :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -15,9 +17,9 @@
   <% @videos.each do |video| %>
     <tr>
       <!--<td><iframe src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></td>-->
-      <td><img src=<%= video.thumb %>></td>
+      <td id="<%=video.vid%>"><img src=<%= video.thumb %> height="281" width="500"></td>
       <td>
-        <h2><%= video.name %><br></h2>
+        <h2><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid}, :remote => true %><br></h2>
         <%= raw(video.description) %>
       </td>
     </tr>

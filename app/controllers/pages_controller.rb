@@ -22,4 +22,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def video
+    respond_to do |format|
+      format.html { redirect_to "pages/viewer" }
+      format.js
+    end
+  end
+
 end

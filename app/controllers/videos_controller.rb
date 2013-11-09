@@ -34,7 +34,7 @@ class VideosController < ApplicationController
           video.vid = video_info["id"]
           video.description = video_info["description"]
           video.date = video_info["upload_date"]
-          video.thumb = video_info["thumbnail_medium"]
+          video.thumb = video_info["thumbnail_large"]
           video.album = album_name
           video.save
         end
@@ -53,7 +53,7 @@ class VideosController < ApplicationController
     @video.name = video_info[0]["title"]
     @video.description = video_info[0]["description"]
     @video.date = video_info[0]["upload_date"]
-    @video.thumb = video_info[0]["thumbnail_medium"]
+    @video.thumb = video_info[0]["thumbnail_large"]
 
     respond_to do |format|
       if @video.save
