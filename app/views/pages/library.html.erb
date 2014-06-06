@@ -16,10 +16,10 @@
   <caption><h1>Video Library<br><%= @album %></h1></caption>
   <% @videos.each do |video| %>
     <tr>
-      <!--<td><iframe src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></td>-->
-      <td id="<%=video.vid%>"><img src=<%= video.thumb %> height="281" width="500"></td>
+      <!--<td id="<%=video.vid%>"><img src=<%= video.thumb %> height="281" width="500"></td>-->
+      <td id="<%=video.vid%>"><%= link_to(image_tag(video.thumb, :size => "500x281"), {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true) %></td>
       <td>
-        <h2><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid}, :remote => true %><br></h2>
+        <div id="<%=video.vid + "t"%>"><h2><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %><br></h2></div>
         <%= raw(video.description) %>
       </td>
     </tr>

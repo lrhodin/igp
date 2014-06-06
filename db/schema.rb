@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107141624) do
+ActiveRecord::Schema.define(version: 20131109155612) do
 
   create_table "videos", force: true do |t|
-    t.string   "name"
+    t.text     "name",        limit: 255
     t.text     "description"
     t.string   "thumb"
     t.date     "date"

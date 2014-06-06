@@ -4,6 +4,8 @@ Igp::Application.routes.draw do
   get "pages/home"
   get "pages/viewer"
   get "pages/video"
+  get "pages/supporters"
+  get "pages/staff"
   resources :videos
 
 
