@@ -6,12 +6,11 @@
 <li id="searchbar">
 <%= form_tag 'library', :method => 'get' do %>
   
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], size: 35 %>
     <%= submit_tag "Search", :name => nil %>
   
 <% end %>
 </li>
-
 <li class="library" id="albums_bar">
 
 <%= link_to 'All', 'library', html_options = {:class => "album"}%>
