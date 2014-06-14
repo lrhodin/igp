@@ -1,6 +1,6 @@
 <%= javascript_include_tag :defaults %>
 
-<caption><h1>Video Library</h1></caption>
+<h1>Video Library</h1>
 
 <ul class="library"> 
 <li id="searchbar">
@@ -23,7 +23,6 @@
 </li>
 
 
-<!--<ul class="library">-->
 	<% @videos.each do |video| %>
 	<li class="library" id="<%=video.vid + "t"%>">
 		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
