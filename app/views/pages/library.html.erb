@@ -1,27 +1,42 @@
 <%= javascript_include_tag :defaults %>
 
+<caption><h1>Video Library</h1></caption>
+
+<ul class="library"> 
+<li id="searchbar">
 <%= form_tag 'library', :method => 'get' do %>
-  <p>
+  
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
+  
+<% end %>
+</li>
+
+<li class="library" id="albums_bar">
+
+<%= link_to 'All', 'library', html_options = {:class => "album"}%>
+
+<% @albums.each do |album| %>	
+  <%= link_to album, 'library?album='.concat(album), html_options = {:class => "album"}%>
 <% end %>
 
-<%= link_to 'All', 'library' %>
-<% @albums.each do |album| %>
-  <%= link_to album, 'library?album='.concat(album) %>
-<% end %>
+</li>
 
-<table>
-  <caption><h1>Video Library<br><%= @album %></h1></caption>
-  <% @videos.each do |video| %>
-    <tr>
-      <!--<td id="<%=video.vid%>"><img src=<%= video.thumb %> height="281" width="500"></td>-->
-      <td id="<%=video.vid%>"><%= link_to(image_tag(video.thumb, :size => "500x281"), {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true) %></td>
-      <td>
-        <div id="<%=video.vid + "t"%>"><h2><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %><br></h2></div>
-        <%= raw(video.description) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+
+<!--<ul class="library">-->
+	<% @videos.each do |video| %>
+	<li class="library" id="<%=video.vid + "t"%>">
+		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
+	</li>
+
+	<li class="library">
+
+
+
+		<div class="vid_thumbnail" id="<%=video.vid%>"><%= link_to(image_tag(video.thumb, :class => "vid_thumbnail"), {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true) %></div>
+
+		<p class="vid_description"><%= raw(video.description) %></p>
+
+	</li>
+<% end %>
+</ul>

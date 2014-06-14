@@ -1,0 +1,81 @@
+//css styles for video library page
+
+ul.library {
+	list-style-type: none;
+	//padding-start: 0px;
+	margin: 0;
+	background-color: #E8E8E8;
+	padding: 0 0 0 0;
+	min-width: 920px;
+}
+
+li.library {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+img.vid_thumbnail {
+	height: 281px;
+	width: 500px;
+}
+
+
+h2.vid_title {
+	max-width: 1200px;
+	min-width: 900px;
+
+}
+
+p.vid_description {
+	max-width: 1200px;
+	min-width: 900px;
+	min-height: 300px;
+}
+
+div.vid_thumbnail {
+	float: left;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+
+//div.album_item {
+//	float: left;
+//	background-color: #A0A0A0;
+//	margin-right: 2px;
+//	padding: 2px 4px 2px 4px;
+//	color: white;
+//}
+
+a:link.album {
+	color: white;
+	background-color: #A0A0A0;
+	padding: 4px 4px 4px 4px;
+}
+
+a:selected.album {
+	color: white;
+	background-color: #606060;
+}
+
+a:visited.album {
+	color: white;
+	background-color: #A0A0A0;
+}
+
+a:hover.album {
+	color: white;
+	background-color: #808080;
+	padding: 4px 4px 4px 4px;
+}
+
+#searchbar {
+	background-color: #606060;
+	padding: 8px 8px 8px 8px;
+	margin: 0 0 0 0;
+	list-style-type: none;
+}
+
+#albums_bar {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
