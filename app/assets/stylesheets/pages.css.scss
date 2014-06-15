@@ -6,9 +6,33 @@
 
 img.staff_photo {
 	margin-right: 10px;
+	margin-bottom: 5px;
+	width: 300px;
 	}
 
 
 p.staff_list {
 	font-size: 18px;
+	float: left;
+	//min-height: 200px;
 }
+
+
+img.staff_photo_test {
+	//position: relative;
+	//top: 0px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	width: 300px;
+	float: left;
+	//vertical-align: text-bottom;
+	}
+
+
+ul.staff_list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+

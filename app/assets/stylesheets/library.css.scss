@@ -5,13 +5,20 @@ ul.library {
 	//padding-start: 0px;
 	margin: 0;
 	background-color: #E8E8E8;
-	padding: 0 0 0 0;
+	padding: 0 0 10px 0;
 	min-width: 920px;
 }
 
 li.library {
 	padding-right: 10px;
 	padding-left: 10px;
+}
+
+li.vid_title {
+	clear: both;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 15px;
 }
 
 img.vid_thumbnail {
@@ -38,38 +45,37 @@ div.vid_thumbnail {
 	padding-bottom: 15px;
 }
 
-//div.album_item {
-//	float: left;
-//	background-color: #A0A0A0;
-//	margin-right: 2px;
-//	padding: 2px 4px 2px 4px;
-//	color: white;
-//}
+div.album_button {
+	float: left;
+	background-color: #C0C0C0;
+	padding: 7px 3px 7px 3px;
+	margin: 2px 2px 2px 2px;
+}
 
 a:link.album {
 	color: white;
-	background-color: #A0A0A0;
-	padding: 4px 4px 4px 4px;
+	background-color: #909090;
+	padding: 5px 5px 5px 5px;
 }
 
 a:selected.album {
 	color: white;
-	background-color: #606060;
+	background-color: #909090;
 }
 
 a:visited.album {
 	color: white;
-	background-color: #A0A0A0;
+	background-color: #909090;
 }
 
 a:hover.album {
 	color: white;
-	background-color: #808080;
-	padding: 4px 4px 4px 4px;
+	background-color: #606060;
+	padding: 5px 5px 5px 5px;
 }
 
 #searchbar {
-	background-color: #606060;
+	background-color: #909090;
 	padding: 8px 8px 8px 8px;
 	margin: 0 0 0 0;
 	list-style-type: none;
@@ -78,4 +84,6 @@ a:hover.album {
 #albums_bar {
 	padding-top: 10px;
 	padding-bottom: 20px;
+	min-width: 900px;
+	max-width: 1200px;
 }

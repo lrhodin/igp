@@ -5,25 +5,24 @@
 <ul class="library"> 
 <li id="searchbar">
 <%= form_tag 'library', :method => 'get' do %>
-  
-    <%= text_field_tag :search, params[:search], size: 35 %>
+    <%= text_field_tag :search, params[:search], size: 55, :placeholder => 'Find videos by title, keyword, or descripton contents.' %>
     <%= submit_tag "Search", :name => nil %>
   
 <% end %>
 </li>
 <li class="library" id="albums_bar">
 
-<%= link_to 'All', 'library', html_options = {:class => "album"}%>
+<div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
 
 <% @albums.each do |album| %>	
-  <%= link_to album, 'library?album='.concat(album), html_options = {:class => "album"}%>
+<div class="album_button"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
 <% end %>
 
 </li>
 
 
 	<% @videos.each do |video| %>
-	<li class="library" id="<%=video.vid + "t"%>">
+	<li class="vid_title" id="<%=video.vid + "t"%>">
 		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
 	</li>
 
