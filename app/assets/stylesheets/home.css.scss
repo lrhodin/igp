@@ -76,7 +76,8 @@ img.left_top_boxes {
 }
 
 h2.homepage {
-	padding: 15px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0 15px 0;
 }
 
 #homepage_text {
@@ -95,5 +96,10 @@ ul.homepage {
 	text-align: left;
 }
 
-
+#homepage_textarea {
+	width: $eyecatch-width;
+	background-color: #E8E8E8;
+	margin: 0 0 0 0;
+	padding: 15px 10px 15px 10px;
+}
 
