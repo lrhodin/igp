@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#banner_top {
+	margin-top: 30px; //puts banner below the navigation bar
+}
 
 img.staff_photo {
 	margin-right: 10px;
@@ -36,3 +39,8 @@ ul.staff_list {
 }
 
 
+ul.layout {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}

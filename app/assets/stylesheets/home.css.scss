@@ -1,0 +1,99 @@
+// Styles for the home page
+// Automatically included in application.css
+
+//Use some SASS variables
+$eyecatch_width: 1200px;
+$eyecatch_height: 500px;
+
+#eyecatch_container_main {
+	//max-width: $eyecatch_width;
+	//min-width: 900px;
+	width: $eyecatch_width;
+	height: $eyecatch_height;
+}
+
+#leftblock {
+	float: left;
+	//width: 576px;
+	width: 50%;
+}
+
+#left_top_container {
+	height: 2 * $eyecatch_height / 3;
+	//width: 576px;
+	width: 100%;
+}
+
+img.left_top_boxes {
+	float: left;
+	height: $eyecatch_height / 3;
+	//width: 287px;
+	//height: 33%;
+	width: 50%;
+}
+
+#left_bottom {
+	height: $eyecatch_height / 3;
+	//width: 576px;
+	width: 100%;
+}
+
+#middleblock {
+	float: left;
+	//width: 169px;
+	width: 14%
+}
+
+#middle_top {
+	height: 2 * $eyecatch_height / 3;
+	//width: 169px;
+	width: 100%;
+}
+
+#middle_bottom {
+	height: $eyecatch_height / 3;
+	//width: 169px;
+	width: 100%;
+}
+
+
+#rightblock {
+	float: left;
+	//width: 412px;
+	width: 36%;
+}
+
+#right_top {
+	height: $eyecatch_height / 3;
+	//width: 412px;
+	width: 100%;
+}
+
+#right_bottom {
+	height: 2 * $eyecatch_height / 3;
+	//width: 412px;
+	width: 100%;
+}
+
+h2.homepage {
+	padding: 15px 0px 0px 0px;
+}
+
+#homepage_text {
+	clear: both;
+	max-width: 1200px;
+	min-width: 900px;
+	font-size: 14pt;
+	text-align: left;
+	//padding: 15px 0px 10px 0px;
+}
+
+ul.homepage {
+	max-width: 1200px;
+	min-width: 900px;
+	font-size: 12pt;
+	text-align: left;
+}
+
+
+
