@@ -1,5 +1,17 @@
 <%= image_tag 'banner_top_1200.jpg', :id => 'banner_top'%>
 
+<% @vidlist.each do |vid| %>
+	<p><%= vid %></p>
+
+	<% @videos.each do |video| %>
+		<% if video.vid == vid %>
+			<%= image_tag video.thumb, class: 'vidlist_thumb' =%>
+		<% end %>
+	<% end %>
+<% end %>
+
+
+
 <div id="eyecatch_container_main">
 	<div id="leftblock">
 		<div id="left_top_container">

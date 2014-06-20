@@ -1,37 +1,31 @@
-<h1>Listing videos</h1>
+<h1>Video Library Admin</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Thumb</th>
-      <th>Date</th>
-      <th>Vid</th>
-      <th>Album</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id="vidlist_holder">
 
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.name %></td>
-        <td><%= video.description %></td>
-        <td><img src=<%= video.thumb %>></td>
-        <td><%= video.date %></td>
-        <td><%= video.vid %></td>
-        <td><%= video.album %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @videos.each do |video| %>
+  <div class="vidlist_thumb"><%= image_tag video.thumb, class: 'vidlist_thumb' %></div>
 
-<br>
+  <p><strong>Date:</strong> <%= video.date %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Vimeo ID:</strong> <%= video.vid %></p>
+  <p><strong>Name:</strong> <%= video.name %></p>
+  <p><strong>Description:</strong> <%= video.description.truncate(300, separator: ' ') %></p>
+  <p><strong>Album(s):</strong> <%= video.album %></p>
 
+  <p class="vidlist_options_block"><strong>
+    <%= link_to 'Vimeo Page', "http://vimeo.com/#{video.vid}", target: '_blank' %> |
+    <%= link_to 'Show', video %> | 
+    <%= link_to 'Edit', edit_video_path(video) %> | 
+    <%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+  </p>
+
+  <div class="vidlist_divider">&nbsp;</div>
+
+<% end %>
+</div>
+
+
+
+
+
+<!-- disabling this because it's really dangerous without authentication
 <%= link_to 'New Video', new_video_path %>
+-->
