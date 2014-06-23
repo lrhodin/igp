@@ -36,7 +36,7 @@ class PagesController < ApplicationController
     elsif params[:search]
       @videos = Video.where("name like ?", "%#{params[:search]}%")
     else
-      @videos = Video.all
+      @videos = Video.order("date DESC")
     end
   end
 
