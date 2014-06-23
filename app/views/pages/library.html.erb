@@ -21,7 +21,7 @@
 </li>
 
 
-	<% Video.order("date DESC") do |video| %>
+	<% @videos.each do |video| %>
 	<li class="vid_title" id="<%=video.vid + "t"%>">
 		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
 	</li>
