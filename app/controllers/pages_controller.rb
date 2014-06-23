@@ -10,6 +10,15 @@ class PagesController < ApplicationController
     @vidlist.sort!
     @vidlist.reverse! #list of Vimeo IDs from highest (most recent) to lowest
     @vidlist = @vidlist[0...9] #9 highest Vimeo IDs ==> 9 most recent videos
+
+    @recentvids = Array.new #array of most recent 9 thumbnails
+    @vidlist.each do |vid|
+        @videos.each do |video|
+            if video.vid == vid
+                @recentvids.push([video.thumb, video.vid])
+            end
+        end
+    end
   end
 
 
