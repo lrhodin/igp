@@ -1,30 +1,36 @@
 <%= image_tag 'banner_top_1200.jpg', :id => 'banner_top'%>
 
+
+
+
+
+
+
 <div id="eyecatch_container_main">
 	<div id="leftblock">
 		<div id="left_top_container">
 			<ul class="layout">
 				<li>
-					<%= image_tag 'test_thumbs/1.jpg', :class => 'left_top_boxes' %>
-					<%= image_tag 'test_thumbs/2.jpg', :class => 'left_top_boxes' %>
+					<%= link_to image_tag( @recentvids[8][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[8][1]} %>
+					<%= link_to image_tag( @recentvids[7][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[7][1]} %>
 				</li>
+					<%= link_to image_tag( @recentvids[6][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[6][1]} %>
+					<%= link_to image_tag( @recentvids[5][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[5][1]} %>
 				<li>
-					<%= image_tag 'test_thumbs/3.jpg', :class => 'left_top_boxes' %>
-					<%= image_tag 'test_thumbs/4.jpg', :class => 'left_top_boxes' %>
 				</li>
 			</ul>
 		</div>
-		<%= image_tag 'test_thumbs/5.jpg', :id => 'left_bottom' %>
+		<%= link_to image_tag( @recentvids[4][0], :id => 'left_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
 	</div>
 
 	<div id='middleblock'>
-		<%= image_tag 'test_thumbs/6.jpg', :id => 'middle_top' %>
-		<%= image_tag 'test_thumbs/7.jpg', :id => 'middle_bottom' %>
+		<%= link_to image_tag( @recentvids[3][0], :id => 'middle_top' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[3][1]} %>
+		<%= link_to image_tag( @recentvids[2][0], :id => 'middle_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[2][1]} %>
 	</div>
 
 	<div id='rightblock'>
-		<%= image_tag 'test_thumbs/8.jpg', :id => 'right_top' %>
-		<%= image_tag 'test_thumbs/9.jpg', :id => 'right_bottom' %>
+		<%= link_to image_tag( @recentvids[1][0], :id => 'right_top' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[1][1]} %>
+		<%= link_to image_tag( @recentvids[0][0], :id => 'right_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
 	</div>
 
 </div>
@@ -46,3 +52,17 @@
 	<li>To provide these resources free of charge to educators and the general public.</li>
 </ul>
 </div>
+
+
+
+<%= image_tag @recentvids[0][0], :rel => '#mies1' %>
+<div class="simple_overlay" id="mies1">
+	<p>this is an overlay</p>
+</div>
+
+
+<script>
+$(document).ready(function() {
+	$("img[rel]").overlay();
+});
+</script>

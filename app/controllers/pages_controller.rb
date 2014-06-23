@@ -1,5 +1,32 @@
 class PagesController < ApplicationController
 
+  def home
+    @videos = Video.all
+    @vidlist = Array.new
+    @videos.each do |video|
+      @vidlist.push(video.vid)
+    end
+
+    @vidlist.sort!
+    @vidlist.reverse! #list of Vimeo IDs from highest (most recent) to lowest
+    @vidlist = @vidlist[0...9] #9 highest Vimeo IDs ==> 9 most recent videos
+
+    @recentvids = Array.new #array of most recent 9 thumbnails
+    @vidlist.each do |vid|
+        @videos.each do |video|
+            if video.vid == vid
+                @recentvids.push([video.thumb, video.vid])
+            end
+        end
+    end
+  end
+
+
+
+
+
+
+
   # get pages/library
   def library
     @albums = Video.uniq.pluck(:album)
@@ -27,6 +54,15 @@ class PagesController < ApplicationController
       format.html { redirect_to "pages/viewer" }
       format.js
     end
+  end
+
+  #putting in static pages just for clarity's sake
+  def supporters
+    render 'supporters'
+  end
+
+  def staff
+    render 'staff'
   end
 
 end
