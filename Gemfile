@@ -48,3 +48,4 @@ end
 
 gem 'vimeo'
 gem 'thin'
+gem 'jqtools-rails'
