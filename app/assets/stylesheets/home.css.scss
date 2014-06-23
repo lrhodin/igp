@@ -108,7 +108,8 @@ ul.homepage {
 	z-index: 10000;
 	background-color: #333;
 	width: 350;
-	height: 400;
+	min-height: 400;
+	border: 1px solid #666;
 
 	-moz-box-shadow: 0 0 90px 5px #000;
 	-webkit-box-shadow: 0 0 90px #000;

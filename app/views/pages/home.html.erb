@@ -30,8 +30,7 @@
 
 	<div id='rightblock'>
 		<%= link_to image_tag( @recentvids[1][0], :id => 'right_top' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[1][1]} %>
-		<%#= link_to image_tag( @recentvids[0][0], :id => 'right_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
-		<%= image_tag @recentvids[0][0], :id => 'right_bottom', :rel => '#right_bottom_overlay' %>
+		<%= link_to image_tag( @recentvids[0][0], :id => 'right_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
 	</div>
 
 </div>
@@ -56,13 +55,14 @@
 
 
 
-<div class="simple_overlay" id="right_bottom_overlay">
-	<%= image_tag @recentvids[1][0] %>
+<%= image_tag @recentvids[0][0], :rel => '#mies1' %>
+<div class="simple_overlay" id="mies1">
+	<p>this is an overlay</p>
 </div>
 
 
 <script>
 $(document).ready(function() {
 	$("img[rel]").overlay();
-	});
+});
 </script>
