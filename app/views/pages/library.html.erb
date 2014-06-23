@@ -15,15 +15,16 @@
 <div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
 
 <% @albums.each do |album| %>	
-<div class="album_button"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
+	<div class="album_button"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
 <% end %>
 
 </li>
 
 
-	<% Video.order("date DESC") do |video| %>
-	<li class="vid_title" id="<%=video.vid + "t"%>">
-		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
+<%# Video.order("date DESC") do |video| %>
+<% @videos.each do |video| %>
+<li class="vid_title" id="<%=video.vid + "t"%>">
+	<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
 	</li>
 
 	<li class="library">
