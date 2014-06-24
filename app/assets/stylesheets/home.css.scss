@@ -103,31 +103,33 @@ ul.homepage {
 	padding: 5px 10px 15px 10px;
 }
 
-div.simple_overlay {
+div.apple_overlay {
 	background-image: url(/images/overlay_bg.png);
 	display: none;
-	z-index: 10000;
+	//z-index: 10000;
 	width: 1000px;
-	min-height: 600px;
-	border: 0; 
+	//min-height: 600px;
+	//border: 0; 
 
-	-moz-box-shadow: 0 0 90px 5px #000;
-	-webkit-box-shadow: 0 0 90px #000;
+	//-moz-box-shadow: 0 0 90px 5px #000;
+	//-webkit-box-shadow: 0 0 90px #000;
 }
 
-div.simple_overlay .close {
+div.apple_overlay .close {
 	background-image: url(/images/close.png);
 	opacity: 1;
-	z-index: 11000;
+	//z-index: 11000;
 	position: absolute;
 	right: 30px;
-	top: 27px;
-	cursor: pointer;
-	height: 35px;
-	width: 35px;
+	top: 25px;
+	right: 23px;
+	//top: 5px;
+	//cursor: pointer;
+	height: 28px;
+	width: 28px;
 }
 
-iframe.simple_overlay {
+iframe.player_overlay{
 	position: absolute;
 	top: 47px;
 	right: 50px;

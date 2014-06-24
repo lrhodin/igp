@@ -57,14 +57,14 @@
 
 
 <% @recentvids.each do |video| %>
-	<div class="simple_overlay" id="<%= video[1] %>">
-		<iframe class="simple_overlay" src="//player.vimeo.com/video/<%= video[1] %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="apple_overlay" id="<%= video[1] %>">
+		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video[1] %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 <% end %>
 
 
 <script>
 $(document).ready(function() {
-	$("img[rel]").overlay({effect: 'apple'});
+	$("img[rel]").overlay({mask: '#000', effect: 'apple'});
 });
 </script>
