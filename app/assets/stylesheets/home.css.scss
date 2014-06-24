@@ -103,24 +103,33 @@ ul.homepage {
 	padding: 5px 10px 15px 10px;
 }
 
-.simple_overlay {
+div.simple_overlay {
+	background-image: url(/images/overlay_bg.png);
 	display: none;
 	z-index: 10000;
-	background-color: #333;
-	width: 350;
-	min-height: 400;
-	border: 1px solid #666;
+	width: 1000px;
+	min-height: 600px;
+	border: 0; 
 
 	-moz-box-shadow: 0 0 90px 5px #000;
 	-webkit-box-shadow: 0 0 90px #000;
 }
 
-.simple_overlay .close {
-	background-image: 'close.png';
+div.simple_overlay .close {
+	background-image: url(/images/close.png);
+	opacity: 1;
+	z-index: 11000;
 	position: absolute;
-	right: -15px;
-	top: -15px;
+	right: 30px;
+	top: 27px;
 	cursor: pointer;
 	height: 35px;
 	width: 35px;
+}
+
+iframe.simple_overlay {
+	position: absolute;
+	top: 47px;
+	right: 50px;
+	border: 1px solid #666;
 }

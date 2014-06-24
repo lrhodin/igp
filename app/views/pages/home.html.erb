@@ -12,26 +12,26 @@
 		<div id="left_top_container">
 			<ul class="layout">
 				<li>
-					<%= link_to image_tag( @recentvids[8][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[8][1]} %>
-					<%= link_to image_tag( @recentvids[7][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[7][1]} %>
+					<%= image_tag @recentvids[8][0], :class => 'left_top_boxes', :rel => '#'+@recentvids[8][1]  %>
+					<%= image_tag @recentvids[7][0], :class => 'left_top_boxes', :rel => '#'+@recentvids[7][1]  %>
 				</li>
-					<%= link_to image_tag( @recentvids[6][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[6][1]} %>
-					<%= link_to image_tag( @recentvids[5][0], :class => 'left_top_boxes' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[5][1]} %>
+					<%= image_tag @recentvids[6][0], :class => 'left_top_boxes', :rel => '#'+@recentvids[6][1]  %>
+					<%= image_tag @recentvids[5][0], :class => 'left_top_boxes', :rel => '#'+@recentvids[5][1]  %>
 				<li>
 				</li>
 			</ul>
 		</div>
-		<%= link_to image_tag( @recentvids[4][0], :id => 'left_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
+		<%= image_tag @recentvids[4][0], :id => 'left_bottom', :rel => '#'+@recentvids[4][1]  %>
 	</div>
 
 	<div id='middleblock'>
-		<%= link_to image_tag( @recentvids[3][0], :id => 'middle_top' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[3][1]} %>
-		<%= link_to image_tag( @recentvids[2][0], :id => 'middle_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[2][1]} %>
+		<%= image_tag @recentvids[3][0], :id => 'middle_top', :rel => '#'+@recentvids[3][1]  %>
+		<%= image_tag @recentvids[2][0], :id => 'middle_bottom', :rel => '#'+@recentvids[2][1] %>
 	</div>
 
 	<div id='rightblock'>
-		<%= link_to image_tag( @recentvids[1][0], :id => 'right_top' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[1][1]} %>
-		<%= link_to image_tag( @recentvids[0][0], :id => 'right_bottom' ), {:controller => 'pages', :action => 'viewer', :video_id => @recentvids[4][1]} %>
+		<%= image_tag @recentvids[1][0], :id => 'right_top', :rel => '#'+@recentvids[1][1]  %>
+		<%= image_tag @recentvids[0][0], :id => 'right_bottom', :rel => '#'+@recentvids[0][1]  %>
 	</div>
 
 </div>
@@ -54,14 +54,17 @@
 
 
 
-<%= image_tag @recentvids[0][0], :rel => '#mies1' %>
-<div class="simple_overlay" id="mies1">
-	<p>this is an overlay</p>
-</div>
+
+
+<% @recentvids.each do |video| %>
+	<div class="simple_overlay" id="<%= video[1] %>">
+		<iframe class="simple_overlay" src="//player.vimeo.com/video/<%= video[1] %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+<% end %>
 
 
 <script>
 $(document).ready(function() {
-	$("img[rel]").overlay();
+	$("img[rel]").overlay({effect: 'apple'});
 });
 </script>
