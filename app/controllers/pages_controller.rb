@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     @vidlist.each do |vid|
         @videos.each do |video|
             if video.vid == vid
-                @recentvids.push([video.thumb, video.vid])
+                @recentvids.push([video.thumb, video.vid, video.name])
             end
         end
     end

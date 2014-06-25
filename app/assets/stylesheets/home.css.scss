@@ -10,70 +10,141 @@ $eyecatch_height: 500px;
 	//min-width: 900px;
 	width: $eyecatch_width;
 	height: $eyecatch_height;
+	margin-top: 6px;
 }
 
 #leftblock {
 	float: left;
-	//width: 576px;
-	width: 50%;
+	width: 600px;
+	//padding-right: 6px; 
 }
 
 #left_top_container {
 	height: 2 * $eyecatch_height / 3;
-	//width: 576px;
-	width: 100%;
-}
-
-img.left_top_boxes {
-	float: left;
-	height: $eyecatch_height / 3;
-	//width: 287px;
-	//height: 33%;
-	width: 50%;
-}
-
-#left_bottom {
-	height: $eyecatch_height / 3;
-	//width: 576px;
 	width: 100%;
 }
 
 #middleblock {
 	float: left;
-	//width: 169px;
-	width: 14%
+	width: 200px; 
+	//padding-right: 6px;
 }
-
-#middle_top {
-	height: 2 * $eyecatch_height / 3;
-	//width: 169px;
-	width: 100%;
-}
-
-#middle_bottom {
-	height: $eyecatch_height / 3;
-	//width: 169px;
-	width: 100%;
-}
-
 
 #rightblock {
 	float: left;
-	//width: 412px;
-	width: 36%;
+	width: 400px;
+	//padding-right: 6px;
 }
 
+
+//divs to contain eyecatch images
+
+
+#left_top_boxes {
+	float: left;
+	overflow: hidden;
+	width: 294px;
+	height: 165px;
+	margin-bottom: 6px;
+	margin-right: 6px;
+
+}
+
+#left_bottom {
+	overflow: hidden;
+	width: 594px;
+	height: 165px;
+	margin-right: 6px;
+}
+
+#middle_top {
+	overflow: hidden;
+	width: 194px;
+	height: 336px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+}
+
+#middle_bottom {
+	overflow: hidden;
+	width: 194px;
+	height: 165px;
+	margin-right: 6px;
+}
+
+
 #right_top {
-	height: $eyecatch_height / 3;
-	//width: 412px;
-	width: 100%;
+	overflow: hidden;
+	width: 400px;
+	height: 165px;
+	margin-bottom: 6px;
 }
 
 #right_bottom {
-	height: 2 * $eyecatch_height / 3;
-	//width: 412px;
+	overflow: hidden;
+	width: 400px;
+	height: 336px;
+}
+
+
+
+
+
+//eyecatch images
+//images are scaled to fill box then centered and cropped
+
+img.left_top_boxes { //these are not cropped
 	width: 100%;
 }
+
+img.left_bottom {
+	width: 100%;
+	position: relative;
+	top: -84.6px; //centers scaled image in div
+}
+
+
+img.middle_top {
+	height: 100%;
+	position: relative;
+	left: -201.7px;
+}
+
+img.middle_bottom {
+	height: 100%;
+	position: relative;
+	left: -50px;
+}
+
+
+img.right_top {
+	width: 100%;
+	position: relative;
+	top: -30px;
+}
+
+img.right_bottom {
+	height: 100%;
+	position: relative;
+	left: -99px; 
+}
+
+
+
+
+//hover captions
+div.caption {
+	z-index: 9000;
+	background-color: #505050;
+	opacity: 0.7;
+	position: absolute;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 6px 6px 6px 6px;
+}
+
+
 
 h2.homepage {
 	padding: 0px 0px 0px 0px;
