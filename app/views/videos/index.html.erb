@@ -12,8 +12,6 @@
 
   <p class="vidlist_options_block"><strong>
     <%= link_to 'Vimeo Page', "http://vimeo.com/#{video.vid}", target: '_blank' %> |
-    <%= link_to 'Show', video %> | 
-    <%= link_to 'Edit', edit_video_path(video) %> | 
     <%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
   </p>
 

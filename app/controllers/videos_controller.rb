@@ -1,5 +1,13 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate
+
+  # Password needed to change any of this
+  def authenticate
+    authenticate_or_request_with_http_basic('Administration') do |username, password|
+      username == 'igp' && password == 'ehkra!Q2w#e'
+    end
+  end
 
   # GET /videos
   # GET /videos.json
