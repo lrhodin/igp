@@ -83,7 +83,9 @@
 
 <% @recentvids.each do |video| %>
 	<div class="apple_overlay" id="<%= video.vid %>">
-		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 <% end %>
 
