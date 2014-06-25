@@ -6,8 +6,6 @@ $eyecatch_width: 1200px;
 $eyecatch_height: 500px;
 
 #eyecatch_container_main {
-	//max-width: $eyecatch_width;
-	//min-width: 900px;
 	width: $eyecatch_width;
 	height: $eyecatch_height;
 	margin-top: 6px;
@@ -16,7 +14,6 @@ $eyecatch_height: 500px;
 #leftblock {
 	float: left;
 	width: 600px;
-	//padding-right: 6px; 
 }
 
 #left_top_container {
@@ -27,13 +24,11 @@ $eyecatch_height: 500px;
 #middleblock {
 	float: left;
 	width: 200px; 
-	//padding-right: 6px;
 }
 
 #rightblock {
 	float: left;
 	width: 400px;
-	//padding-right: 6px;
 }
 
 
@@ -157,7 +152,6 @@ h2.homepage {
 	min-width: 900px;
 	font-size: 14pt;
 	text-align: left;
-	//padding: 15px 0px 10px 0px;
 }
 
 ul.homepage {
@@ -168,7 +162,7 @@ ul.homepage {
 }
 
 #homepage_textarea {
-	width: $eyecatch-width;
+	width: 1200px;
 	background-color: #E8E8E8;
 	margin: 0 0 0 0;
 	padding: 5px 10px 15px 10px;
@@ -177,31 +171,23 @@ ul.homepage {
 div.apple_overlay {
 	background-image: url(/images/overlay_bg.png);
 	display: none;
-	//z-index: 10000;
 	width: 1000px;
-	//min-height: 600px;
-	//border: 0; 
-
-	//-moz-box-shadow: 0 0 90px 5px #000;
-	//-webkit-box-shadow: 0 0 90px #000;
 }
 
 div.apple_overlay .close {
 	background-image: url(/images/close.png);
 	opacity: 1;
-	//z-index: 11000;
 	position: absolute;
 	right: 30px;
 	top: 25px;
 	right: 23px;
-	//top: 5px;
-	//cursor: pointer;
 	height: 28px;
 	width: 28px;
 }
 
 iframe.player_overlay{
 	position: absolute;
+	z-index: 10000;
 	top: 47px;
 	right: 50px;
 	border: 1px solid #666;

@@ -5,59 +5,57 @@
 <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
 
 
-
-
 <div id="eyecatch_container_main">
 	<div id="leftblock">
 		<div id="left_top_container">
 			<ul class="layout">
 				<li>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[8][1] %>" ><%= @recentvids[8][2] %></div>
-						<%= image_tag @recentvids[8][0], :class => 'left_top_boxes' %>
+						<div class="caption" rel="<%= '#'+@recentvids[8].vid %>" ><%= @recentvids[8].name %></div>
+						<%= image_tag @recentvids[8].thumb, :class => 'left_top_boxes' %>
 					</div>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%='#'+@recentvids[7][1] %>" ><%= @recentvids[7][2] %></div>
-						<%= image_tag @recentvids[7][0], :class => 'left_top_boxes' %>
+						<div class="caption" rel="<%='#'+@recentvids[7].vid %>" ><%= @recentvids[7].name %></div>
+						<%= image_tag @recentvids[7].thumb, :class => 'left_top_boxes' %>
 					</div>
 				</li>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[6][1] %>" ><%= @recentvids[6][2] %></div>
-						<%= image_tag @recentvids[6][0], :class => 'left_top_boxes' %>
+						<div class="caption" rel="<%= '#'+@recentvids[6].vid %>" ><%= @recentvids[6].name %></div>
+						<%= image_tag @recentvids[6].thumb, :class => 'left_top_boxes' %>
 					</div>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[5][1] %>" ><%= @recentvids[5][2] %></div>
-						<%= image_tag @recentvids[5][0], :class => 'left_top_boxes' %>
+						<div class="caption" rel="<%= '#'+@recentvids[5].vid %>" ><%= @recentvids[5].name %></div>
+						<%= image_tag @recentvids[5].thumb, :class => 'left_top_boxes' %>
 					</div>
 				<li>
 				</li>
 			</ul>
 		</div>
 		<div class="imagebox" id="left_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[4][1] %>" ><%= @recentvids[4][2] %></div>
-			<%= image_tag @recentvids[4][0], :class => 'left_bottom' %>
+			<div class="caption" rel="<%= '#'+@recentvids[4].vid %>" ><%= @recentvids[4].name %></div>
+			<%= image_tag @recentvids[4].thumb, :class => 'left_bottom' %>
 		</div>
 	</div>
 
 	<div id='middleblock'>
 		<div class="imagebox" id="middle_top">
-			<div class="caption" rel="<%= '#'+@recentvids[3][1] %>" ><%= @recentvids[3][2] %></div>
-			<%= image_tag @recentvids[3][0], :class => 'middle_top' %>
+			<div class="caption" rel="<%= '#'+@recentvids[3].vid %>" ><%= @recentvids[3].name %></div>
+			<%= image_tag @recentvids[3].thumb, :class => 'middle_top' %>
 		</div>
 		<div class="imagebox" id="middle_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[2][1] %>" ><%= @recentvids[2][2] %></div>
-			<%= image_tag @recentvids[2][0], :class => 'middle_bottom' %>
+			<div class="caption" rel="<%= '#'+@recentvids[2].vid %>" ><%= @recentvids[2].name %></div>
+			<%= image_tag @recentvids[2].thumb, :class => 'middle_bottom' %>
 		</div>
 	</div>
 
 	<div id='rightblock'>
 		<div class="imagebox" id="right_top">
-			<div class="caption" rel="<%= '#'+@recentvids[1][1] %>" ><%= @recentvids[1][2] %></div>
-			<%= image_tag @recentvids[1][0], :class => 'right_top' %>
+			<div class="caption" rel="<%= '#'+@recentvids[1].vid %>" ><%= @recentvids[1].name %></div>
+			<%= image_tag @recentvids[1].thumb, :class => 'right_top' %>
 		</div>
 		<div class="imagebox" id="right_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[0][1] %>" ><%= @recentvids[0][2] %></div>
-			<%= image_tag @recentvids[0][0], :class => 'right_bottom' %>
+			<div class="caption" rel="<%= '#'+@recentvids[0].vid %>" ><%= @recentvids[0].name %></div>
+			<%= image_tag @recentvids[0].thumb, :class => 'right_bottom' %>
 		</div>
 	</div>
 
@@ -84,8 +82,8 @@
 
 
 <% @recentvids.each do |video| %>
-	<div class="apple_overlay" id="<%= video[1] %>">
-		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video[1] %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="apple_overlay" id="<%= video.vid %>">
+		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 <% end %>
 
@@ -101,8 +99,8 @@ $('div.caption').hide();
 
 $('.imagebox').mouseenter(function() {
 	var caption_div = $(this).find('div');
-	var width = $(this).css('width'); //not displaying because title is in clipped part of image
-	var height = $(this).css('height'); //not working because element is returning 'auto'
+	var width = $(this).css('width'); 
+	var height = $(this).css('height'); 
 	caption_div.show();
 	caption_div.css({'width':width, 'height':height});
 	

@@ -1,30 +1,10 @@
 class PagesController < ApplicationController
 
+  # get most recent 9 videos for homepage mosaic
   def home
-    @videos = Video.all
-    @vidlist = Array.new
-    @videos.each do |video|
-      @vidlist.push(video.vid)
-    end
-
-    @vidlist.sort!
-    @vidlist.reverse! #list of Vimeo IDs from highest (most recent) to lowest
-    @vidlist = @vidlist[0...9] #9 highest Vimeo IDs ==> 9 most recent videos
-
-    @recentvids = Array.new #array of most recent 9 thumbnails
-    @vidlist.each do |vid|
-        @videos.each do |video|
-            if video.vid == vid
-                @recentvids.push([video.thumb, video.vid, video.name])
-            end
-        end
-    end
+    @videos = Video.order("date DESC")
+    @recentvids = @videos[0...9]
   end
-
-
-
-
-
 
 
   # get pages/library
