@@ -103,7 +103,6 @@ $('.imagebox').mouseenter(function() {
 	var caption_div = $(this).find('div');
 	var width = $(this).css('width'); //not displaying because title is in clipped part of image
 	var height = $(this).css('height'); //not working because element is returning 'auto'
-	console.log(height, width);
 	caption_div.show();
 	caption_div.css({'width':width, 'height':height});
 	
