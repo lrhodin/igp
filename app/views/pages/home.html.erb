@@ -1,9 +1,11 @@
-<%= image_tag 'banner_top_1200.jpg', :id => 'banner_top'%>
+<div id="banner_top">
+	<%= image_tag 'igp_website_alpha_banner_text.png', :id => 'banner_text' %>
+	<%= image_tag 'igp_website_banner.jpg' %>
+</div>
 
 
 
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-
+<div class="darkmask">&nbsp;</div>
 
 <div id="eyecatch_container_main">
 	<div id="leftblock">
@@ -82,34 +84,63 @@
 
 
 <% @recentvids.each do |video| %>
-	<div class="apple_overlay" id="<%= video.vid %>">
-
-
-<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="overlay" id="<%= video.vid %>">
+		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 <% end %>
 
 
 <script>
 $(document).ready(function() {
-	$("div[rel]").overlay({mask: '#000', effect: 'apple'});
-});
 
+	//show video titles on hover
+	$(".imagebox").mouseenter(function() {
+		var caption_div = $(this).find("div");
+		var width = $(this).css("width"); 
+		var height = $(this).css("height"); 
+		caption_div.show();
+		caption_div.css({"width":width, "height":height});
+		
+	}).mouseleave(function() {
+		$(this).find("div").hide();
+	});
 
-$('div.caption').hide();
+	//show player overlay on click
+	$(".imagebox").click(function() {
+		var id = $(this).find("div").attr("rel")
+		show_overlay(id);
+	});
 
+	//hide player overlay when user clicks off player 
+	$(".darkmask").click(function() {
+		hide_overlay();
+	});
 
-$('.imagebox').mouseenter(function() {
-	var caption_div = $(this).find('div');
-	var width = $(this).css('width'); 
-	var height = $(this).css('height'); 
-	caption_div.show();
-	caption_div.css({'width':width, 'height':height});
+	//also hide if player border region is clicked
+	$(".overlay").click(function() {
+		hide_overlay();
+	});
 	
-}).mouseleave(function() {
-	$(this).find('div').hide();
+
 });
 
+//functions
+
+function show_overlay(id) {
+	$(".darkmask").fadeIn(500);
+
+	//determine anchor points to center overlay div 
+	var anchor_top = ($(window).height() - 600) / 2;
+	var anchor_left = ($(window).width() - 1000) / 2;
+	$(id).css({"top":anchor_top, "left":anchor_left});
+
+	$(id).fadeIn(500);
+}
+
+function hide_overlay() {
+	$(".overlay").fadeOut(200);
+	$(".darkmask").fadeOut(200);
+}
 
 
 </script>
