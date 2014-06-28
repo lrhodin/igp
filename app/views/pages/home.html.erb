@@ -13,20 +13,20 @@
 			<ul class="layout">
 				<li>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[8].vid %>" ><%= @recentvids[8].name %></div>
+						<div class="caption" rel="<%= '#'+@recentvids[8].vid %>" ><span class="caption"><%= @recentvids[8].name %></span></div>
 						<%= image_tag @recentvids[8].thumb, :class => 'left_top_boxes' %>
 					</div>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%='#'+@recentvids[7].vid %>" ><%= @recentvids[7].name %></div>
+						<div class="caption" rel="<%='#'+@recentvids[7].vid %>" ><span class="caption"><%= @recentvids[7].name %></span></div>
 						<%= image_tag @recentvids[7].thumb, :class => 'left_top_boxes' %>
 					</div>
 				</li>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[6].vid %>" ><%= @recentvids[6].name %></div>
+						<div class="caption" rel="<%= '#'+@recentvids[6].vid %>" ><span class="caption"><%= @recentvids[6].name %></span></div>
 						<%= image_tag @recentvids[6].thumb, :class => 'left_top_boxes' %>
 					</div>
 					<div class="imagebox" id="left_top_boxes">
-						<div class="caption" rel="<%= '#'+@recentvids[5].vid %>" ><%= @recentvids[5].name %></div>
+						<div class="caption" rel="<%= '#'+@recentvids[5].vid %>" ><span class="caption"><%= @recentvids[5].name %></span></div>
 						<%= image_tag @recentvids[5].thumb, :class => 'left_top_boxes' %>
 					</div>
 				<li>
@@ -34,29 +34,29 @@
 			</ul>
 		</div>
 		<div class="imagebox" id="left_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[4].vid %>" ><%= @recentvids[4].name %></div>
+			<div class="caption" rel="<%= '#'+@recentvids[4].vid %>" ><span class="caption"><%= @recentvids[4].name %></span></div>
 			<%= image_tag @recentvids[4].thumb, :class => 'left_bottom' %>
 		</div>
 	</div>
 
 	<div id='middleblock'>
 		<div class="imagebox" id="middle_top">
-			<div class="caption" rel="<%= '#'+@recentvids[3].vid %>" ><%= @recentvids[3].name %></div>
+			<div class="caption" rel="<%= '#'+@recentvids[3].vid %>" ><span class="caption"><%= @recentvids[3].name %></span></div>
 			<%= image_tag @recentvids[3].thumb, :class => 'middle_top' %>
 		</div>
 		<div class="imagebox" id="middle_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[2].vid %>" ><%= @recentvids[2].name %></div>
+			<div class="caption" rel="<%= '#'+@recentvids[2].vid %>" ><span class="caption"><%= @recentvids[2].name %></span></div>
 			<%= image_tag @recentvids[2].thumb, :class => 'middle_bottom' %>
 		</div>
 	</div>
 
 	<div id='rightblock'>
 		<div class="imagebox" id="right_top">
-			<div class="caption" rel="<%= '#'+@recentvids[1].vid %>" ><%= @recentvids[1].name %></div>
+			<div class="caption" rel="<%= '#'+@recentvids[1].vid %>" ><span class="caption"><%= @recentvids[1].name %></span></div>
 			<%= image_tag @recentvids[1].thumb, :class => 'right_top' %>
 		</div>
 		<div class="imagebox" id="right_bottom">
-			<div class="caption" rel="<%= '#'+@recentvids[0].vid %>" ><%= @recentvids[0].name %></div>
+			<div class="caption" rel="<%= '#'+@recentvids[0].vid %>" ><span class="caption"><%= @recentvids[0].name %></span></div>
 			<%= image_tag @recentvids[0].thumb, :class => 'right_bottom' %>
 		</div>
 	</div>
@@ -96,13 +96,13 @@ $(document).ready(function() {
 	//show video titles on hover
 	$(".imagebox").mouseenter(function() {
 		var caption_div = $(this).find("div");
-		var width = $(this).css("width"); 
-		var height = $(this).css("height"); 
+		var thumbnail = $(this).find("img");
+		thumbnail.css({"opacity":"0.4"});
 		caption_div.show();
-		caption_div.css({"width":width, "height":height});
 		
 	}).mouseleave(function() {
 		$(this).find("div").hide();
+		$(this).find("img").css({"opacity":"1.0"});
 	});
 
 	//show player overlay on click

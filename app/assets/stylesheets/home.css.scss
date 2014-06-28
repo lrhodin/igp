@@ -7,82 +7,86 @@ $eyecatch_height: 500px;
 
 #eyecatch_container_main {
 	width: $eyecatch_width;
-	height: $eyecatch_height;
-	margin: 6px 0 0 0;
+	//height: $eyecatch_height;
+	margin: 8px 0 0 0;
 }
 
 #leftblock {
 	float: left;
 	width: 600px;
+	margin: 0;
+	padding: 0;
 }
 
 #left_top_container {
-	height: 2 * $eyecatch_height / 3;
+	height: 66.7%;
 	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #middleblock {
 	float: left;
 	width: 200px; 
+	margin: 0;
+	padding: 0;
 }
 
 #rightblock {
 	float: left;
 	width: 400px;
+	margin: 0;
+	padding: 0;
 }
 
 
 //divs to contain eyecatch images
 
 .imagebox {
+	float: left;
+	overflow: hidden;
+	margin: 0 11px 11px 0;
 	box-shadow: 3px 3px 4px #555;
+	border: 1px solid #555;
 }
 
 
 #left_top_boxes {
-	float: left;
-	overflow: hidden;
-	width: 294px;
-	height: 165px;
-	margin-bottom: 6px;
-	margin-right: 6px;
+	width: 287px;
+	height: 161px;
+	line-height: 161px; //necessary for keeping text at bottom
 
 }
 
 #left_bottom {
-	overflow: hidden;
-	width: 594px;
-	height: 165px;
-	margin-right: 6px;
+	width: 587px;
+	height: 161px;
+	line-height: 161px;
 }
 
 #middle_top {
-	overflow: hidden;
-	width: 194px;
-	height: 336px;
-	margin-right: 6px;
-	margin-bottom: 6px;
+	width: 187px;
+	height: 335px;
+	line-height: 335px;
 }
 
 #middle_bottom {
-	overflow: hidden;
-	width: 194px;
-	height: 165px;
-	margin-right: 6px;
+	width: 187px;
+	height: 161px;
+	line-height: 161px;
 }
 
 
 #right_top {
-	overflow: hidden;
 	width: 400px;
-	height: 165px;
-	margin-bottom: 6px;
+	height: 161px;
+	line-height: 161px;
 }
 
 #right_bottom {
-	overflow: hidden;
 	width: 400px;
-	height: 336px;
+	height: 335px;
+	line-height: 335px;
 }
 
 
@@ -135,13 +139,26 @@ img.right_bottom {
 div.caption {
 	display: none;
 	z-index: 9000;
-	background-color: #505050;
-	opacity: 0.7;
+	background-color: transparent;
+	opacity: 0.8;
 	position: absolute;
-	color: white;
+	top: inherit;
+	left: inherit;
+	width: inherit;
+	height: inherit;
+	line-height: inherit;
+	color: #333;
 	font-size: 14px;
 	font-weight: bold;
-	padding: 6px 6px 6px 6px;
+	//padding: 6px 14px 200px 6px;
+}
+
+span.caption { //necessary for placing text at bottom
+	display: inline-block;
+	vertical-align: bottom;
+	text-align: left;
+	line-height: 1em;
+	margin: 6px 6px 6px 6px;
 }
 
 
@@ -187,12 +204,14 @@ div.darkmask {
 
 #banner_img {
 	box-shadow: 3px 3px 4px #555;
+	border: 1px solid #555;
 }
 
 #banner_text {
 	position: absolute;
 	top: inherit; 
-	//left: inherit;
+	margin-left: 8px;
+	margin-top: 8px;
 }
 
 
