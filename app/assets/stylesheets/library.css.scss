@@ -4,7 +4,7 @@ ul.library {
 	list-style-type: none;
 	//padding-start: 0px;
 	margin: 0;
-	background-color: #E8E8E8;
+	background-color: transparent;
 	padding: 0 0 10px 0;
 	min-width: 920px;
 }
@@ -86,4 +86,12 @@ a:hover.album {
 	padding-bottom: 20px;
 	min-width: 900px;
 	max-width: 1200px;
+}
+
+.playbutton {
+	position: absolute;
+	top: inherit;
+	left: inherit;
+	padding: 90px 200px 90px 200px;
+	opacity: 0.4;
 }

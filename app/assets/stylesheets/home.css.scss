@@ -8,7 +8,7 @@ $eyecatch_height: 500px;
 #eyecatch_container_main {
 	width: $eyecatch_width;
 	height: $eyecatch_height;
-	margin-top: 6px;
+	margin: 6px 0 0 0;
 }
 
 #leftblock {
@@ -33,6 +33,10 @@ $eyecatch_height: 500px;
 
 
 //divs to contain eyecatch images
+
+.imagebox {
+	box-shadow: 3px 3px 4px #555;
+}
 
 
 #left_top_boxes {
@@ -179,13 +183,16 @@ div.darkmask {
 //everything else
 
 #banner_top {
-	margin-top: 24px; //puts banner below the navigation bar
+}
+
+#banner_img {
+	box-shadow: 3px 3px 4px #555;
 }
 
 #banner_text {
 	position: absolute;
 	top: inherit; 
-	left: inherit;
+	//left: inherit;
 }
 
 
@@ -211,7 +218,7 @@ ul.homepage {
 
 #homepage_textarea {
 	width: 1200px;
-	background-color: #E8E8E8;
+	background-color: transparent;
 	margin: 0 0 0 0;
 	padding: 5px 10px 15px 10px;
 }

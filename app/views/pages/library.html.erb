@@ -1,37 +1,53 @@
 <h1>Video Library</h1>
 
 <ul class="library"> 
+
 <li id="searchbar">
-<%= form_tag 'library', :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], size: 55, :placeholder => 'Find videos by title, keyword, or descripton contents.' %>
-    <%= submit_tag "Search", :name => nil %>
-  
-<% end %>
+	<%= form_tag 'library', :method => 'get' do %>
+		<%= text_field_tag :search, params[:search], size: 55, :placeholder => 'Find videos by title, keyword, or descripton contents.' %>
+		<%= submit_tag "Search", :name => nil %>  
+	<% end %>
 </li>
+
 <li class="library" id="albums_bar">
-
-<div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
-
-<% @albums.each do |album| %>	
-	<div class="album_button"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
-<% end %>
+	<div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
+		<% @albums.each do |album| %>	
+			<div class="album_button"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
+		<% end %>
 
 </li>
 
+<% @videos.each do |video| %>
 
-	<% @videos.each do |video| %>
-	<li class="vid_title" id="<%=video.vid + "t"%>">
-		<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
-	</li>
+<li class="vid_title" id="<%=video.vid + "t"%>">
+	<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
+</li>
 
-	<li class="library">
-
-
-
-		<div class="vid_thumbnail" id="<%=video.vid%>"><%= link_to(image_tag(video.thumb, :class => "vid_thumbnail"), {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true) %></div>
-
+<li class="library">
+	<div class="vid_thumbnail" id="<%=video.vid%>">
+		<%= link_to(image_tag("playbutton.png", :class => "playbutton"), :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true) %>
+		<%= image_tag video.thumb, :class => "vid_thumbnail" %>
+	</div>
 		<p class="vid_description"><%= raw(video.description) %></p>
 
-	</li>
+</li>
+
 <% end %>
+
 </ul>
+
+
+
+<script>
+
+$(document).ready(function() {
+
+	//highlight playbutton on hover
+	$(".playbutton").mouseenter(function() {
+		$(this).css({"opacity":"0.6"});
+	}).mouseleave(function() {
+		$(this).css({"opacity":"0.4"});
+	});
+});
+
+</script>
