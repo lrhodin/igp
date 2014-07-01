@@ -32,10 +32,18 @@
 
 div.album_button {
 	float: left;
-	//background-color: #C0C0C0;
 	padding: 5px 3px 5px 3px;
 	margin: 2px 2px 2px 2px;
 	background: linear-gradient(#F8F8F8, #E0E0E0);
+	box-shadow: 2px 2px 3px #555;
+	cursor: pointer;
+}
+
+div.album_button_active {
+	float: left;
+	padding: 5px 3px 5px 3px;
+	margin: 2px 2px 2px 2px;
+	background: linear-gradient(#E0E0E0, #B0B0B0);
 	box-shadow: 2px 2px 3px #555;
 	cursor: pointer;
 }
@@ -68,18 +76,37 @@ li.library {
 	overflow: hidden;
 }
 
-//li.vid_title {
-//	clear: both;
-//	padding-right: 10px;
-//	padding-left: 10px;
-//	padding-top: 15px;
-//}
+@keyframes vid_rolldown {
+	0% {max-height: 200px;}
+	100% {max-height: 10000px;}
+}
+
+@-webkit-keyframes vid_rolldown {
+	0% {max-height: 200px;}
+	100% {max-height: 10000px;}
+}
+
+@keyframes vid_rollup {
+	0% {height: 500px;}
+	100% {height: 200px;}
+}
+
+@-webkit-keyframes vid_rollup {
+	0% {height: 500px;}
+	100% {height: 200px;}
+}
+
+
+h2.expanded_title {
+	font-size: 18px;
+	margin: 15px 50px 0px 50px;
+	display: none;
+}
 
 h2.vid_title {
-	//max-width: 1200px;
-	//min-width: 900px;
 	font-size: 16px;
 	margin: 0 0 5px 0;
+	display: normal;
 }
 
 div.video_thumbnail {
@@ -121,7 +148,22 @@ iframe.library_player {
 	height: 506px;
 	border: 1px solid #666;
 	//box-shadow: 3px 3px 4px #333;
-	margin: 30px 50px 20px 50px;
+	margin: 15px 50px 20px 50px;
+	animation: player_fadein 1s;
+}
+
+@keyframes player_fadein {
+	0% {	height: 0px;
+		background-color: transparent;}
+	100% {	height: 506px;
+		background-color: #000000;}
+}
+
+@-webkit-keyframes player_fadein {
+	0% {	height: 0px;
+		background-color: transparent;}
+	100% {	height: 506px;
+		background-color: #000000;}
 }
 
 span.expandbtn {

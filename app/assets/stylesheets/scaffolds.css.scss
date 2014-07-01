@@ -27,11 +27,11 @@ div.container_outer {
 }
 
 div.container {
-	width: 1020px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0;
-	background: transparent;
+  width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background: transparent;
 }
 
 
@@ -87,8 +87,8 @@ ul.navbar {
 
 
 li.nav_logo {
-	float: left;
-	background-color: transparent;
+  float: left;
+  background-color: transparent;
   padding: 10px 7px 7px 7px;
   text-align: center;
   cursor: pointer;
@@ -107,8 +107,8 @@ li.nav_home {
 }
 
 li.nav_button {
-	float: left;
-	width: 100px;
+  float: left;
+  width: 100px;
   text-align: center;
   padding: 10px 10px 10px 10px;
   margin: 0px 2px 2px 2px;
@@ -116,6 +116,18 @@ li.nav_button {
   font-size: 14px;
   cursor: pointer;
   background: linear-gradient(#F8F8F8, #E0E0E0);
+}
+
+li.nav_button_active {
+  float: left;
+  width: 100px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 2px 2px 2px;
+  box-shadow: 2px 2px 3px #555;
+  font-size: 14px;
+  cursor: pointer;
+  background: linear-gradient(#E0E0E0, #B0B0B0);
 }
 
 

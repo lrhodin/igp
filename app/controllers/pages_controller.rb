@@ -9,12 +9,13 @@ class PagesController < ApplicationController
 
   # get pages/library
   def library
-    @albums = Video.uniq.pluck(:album)
+    @albums = Video.uniq.pluck(:album).sort()
     if params[:album]
       @videos = Video.where(Album: params[:album])
       @album = params[:album]
     elsif params[:search]
-      @videos = Video.where("name like ?", "%#{params[:search]}%")
+	#need more complex search method, but using 'description like' for now since it catches more than name only
+      @videos = Video.where("description like ?", "%#{params[:search]}%")
     else
       @videos = Video.order("date DESC")
     end

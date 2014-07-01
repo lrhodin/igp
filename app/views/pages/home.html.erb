@@ -112,16 +112,16 @@ $(document).ready(function() {
 
 
 function show_overlay(id) {
+	//inject vimeo player (avoid loading until we actually want to see it)
+	var vimeo_id = id.replace("#","");
+	$(id).html('<iframe class="player_overlay" src="//player.vimeo.com/video/'+vimeo_id+'"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 	$(".darkmask").fadeIn(500);
 
 	//determine anchor points to center overlay div 
 	var anchor_top = ($(window).height() - 600) / 2;
 	var anchor_left = ($(window).width() - 1000) / 2;
-	var vimeo_id = id.replace("#","");
 	$(id).css({"top":anchor_top, "left":anchor_left});
 
-	//inject vimeo player (avoid loading until we actually want to see it)
-	$(id).html('<iframe class="player_overlay" src="//player.vimeo.com/video/'+vimeo_id+'"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 	$(id).fadeIn(500);
 }
 

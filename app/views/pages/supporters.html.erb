@@ -1,13 +1,13 @@
 <h1>Our work would not be possible without the support of:</h1>
             <table align="center" cellpadding="6" cellspacing="6" border="0" width="900">
             <tr>
-            	<td id="b2"><%= image_tag("UCB_seal.png")%><br />
+            	<td class="b2"><%= image_tag("UCB_seal.png")%><br />
             	  <br />
            	  The University of Colorado at Boulder</td>
-                <td id="b2"><%= image_tag("NPS_logo.png")%><br />
+                <td class="b2"><%= image_tag("NPS_logo.png")%><br />
                   <br />
                   The National Park Service</td>
-                <td id="b2"><%=image_tag("AGI_logo.jpg")%><br />
+                <td class="b2"><%=image_tag("AGI_logo.png")%><br />
                   <br />
                 The American Geological Institute</td>
             </tr>
@@ -17,13 +17,13 @@
             
             <table align="center" cellpadding="6" cellspacing="6" border="0" width="900">
             <tr>
-            	<td id="b2"><%=image_tag("AAPG_logo.jpg")%><br />
+            	<td class="b2"><%=image_tag("AAPG_logo.png")%><br />
             	  <br />
            	  The AAPG Foundation</td>
-                <td id="b2"><%=image_tag("SEG_logo.jpg")%><br />
+                <td class="b2"><%=image_tag("SEG_logo.png")%><br />
                   <br />
               The SEG Foundation</td>
-                <td id="b2"><%=image_tag("GCSSEPM_logo.jpg")%><br />
+                <td class="b2"><%=image_tag("GCSSEPM_logo.png")%><br />
                   <br />
                 Gulf Coast Section SEPM</td>
             </tr>
@@ -33,13 +33,13 @@
 
             <table align="center" cellpadding="6" cellspacing="6" border="0" width="900">
             <tr>
-                <td id="b2"><%=image_tag("blakey_logo.jpg")%><br />
+                <td class="b2"><a href="http://cpgeosystems.com"><%=image_tag("blakey_logo.jpg")%></a><br />
                   <br />
               Ron Blakey <br> Colorado Plateau Geosystems</td>
-                <td id="b2"><%=image_tag("whiting_logo.png")%><br />
+                <td class="b2"><a href="http://www.whiting.com/"><%=image_tag("whiting_logo.png")%></a><br />
                   <br />
                   Whiting Petroleum</td>
-                <td id="b2"><%=image_tag("dmns_logo.png")%><br />
+                <td class="b2"><a href="http://www.dmns.org/"><%=image_tag("dmns_logo.png")%></a><br />
                   <br />
                 Denver Museum of Nature and Science<img src="spacer.gif" width="1" height="60" /></td>
             </tr>
@@ -49,10 +49,10 @@
             
             <table align="center" cellpadding="6" cellspacing="6" border="0" width="900">
             <tr>
-            	<td id="b1">Paul M. Rady</td>
-                <td id="b1">The Rady Family Foundation</td>
-                <td id="b1">John Lockridge</td>
-                <td id="b1">Bud Reid</td>
+            	<td class="b1">Paul M. Rady</td>
+                <td class="b1">The Rady Family Foundation</td>
+                <td class="b1">John Lockridge</td>
+                <td class="b1">Bud Reid</td>
             </tr>
             </table>
             
@@ -60,9 +60,17 @@
             
             <table align="center" cellpadding="6" cellspacing="6" border="0" width="900">
             <tr>
-            	<td id="b1">Bruce Benson</td>
-                <td id="b1">The Anschutz Family Foundation</td>
-                <td id="b1">Westport Resources</td>
-                <td id="b1">Rutt Bridges Family Foundation</td>
+            	<td class="b1">Bruce Benson</td>
+                <td class="b1">The Anschutz Family Foundation</td>
+                <td class="b1">Westport Resources</td>
+                <td class="b1">Rutt Bridges Family Foundation</td>
             </tr>
             </table>
+
+
+<script>
+$(document).ready(function() {
+	//highlight appropriate nav tab
+	$("li[rel$='supporters']").toggleClass("nav_button nav_button_active");
+});
+</script>

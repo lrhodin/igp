@@ -11,6 +11,13 @@ Director of the Energy and Minerals Applied Research Center
 <%=image_tag("ludvig_staff.jpg", :class => "staff_photo")%>Ludvig Rhodin<br>
 <%=image_tag("eric_staff.jpg", :class => "staff_photo")%>Eric Lobato<br>
 
+<script>
+$(document).ready(function() {
+	//highlight appropriate nav tab
+	$("li[rel$='staff']").toggleClass("nav_button nav_button_active");
+});
+</script>
+
 <!--
 <ul class="staff_list">
 	<li>
