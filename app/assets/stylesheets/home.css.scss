@@ -2,8 +2,8 @@
 // Automatically included in application.css
 
 //Use some SASS variables
-$eyecatch_width: 1200px;
-$eyecatch_height: 500px;
+//decreased width by factor of 0.85
+$eyecatch_width: 1020;
 
 #eyecatch_container_main {
 	width: $eyecatch_width;
@@ -13,7 +13,7 @@ $eyecatch_height: 500px;
 
 #leftblock {
 	float: left;
-	width: 600px;
+	width: 510px;
 	margin: 0;
 	padding: 0;
 }
@@ -27,14 +27,14 @@ $eyecatch_height: 500px;
 
 #middleblock {
 	float: left;
-	width: 200px; 
+	width: 170px; 
 	margin: 0;
 	padding: 0;
 }
 
 #rightblock {
 	float: left;
-	width: 400px;
+	width: 340px;
 	margin: 0;
 	padding: 0;
 }
@@ -48,89 +48,49 @@ $eyecatch_height: 500px;
 	margin: 0 11px 11px 0;
 	box-shadow: 3px 3px 4px #555;
 	border: 1px solid #555;
+	background-position: center;
+	background-size: cover;
 }
 
 
 #left_top_boxes {
-	width: 287px;
-	height: 161px;
-	line-height: 161px; //necessary for keeping text at bottom
+	width: 242px;
+	height: 136px;
+	line-height: 136px; //necessary for keeping text at bottom
 
 }
 
 #left_bottom {
-	width: 587px;
-	height: 161px;
-	line-height: 161px;
+	width: 499px;
+	height: 136px;
+	line-height: 136px;
 }
 
 #middle_top {
-	width: 187px;
-	height: 335px;
-	line-height: 335px;
+	width: 159px;
+	height: 285px; //must add 2px for borders
+	line-height: 285px;
 }
 
 #middle_bottom {
-	width: 187px;
-	height: 161px;
-	line-height: 161px;
+	width: 159px;
+	height: 136px;
+	line-height: 136px;
 }
 
 
 #right_top {
-	width: 400px;
-	height: 161px;
-	line-height: 161px;
+	width: 340px;
+	height: 136px;
+	line-height: 136px;
 }
 
 #right_bottom {
-	width: 400px;
-	height: 335px;
-	line-height: 335px;
+	width: 340px;
+	height: 285px;
+	line-height: 285px;
 }
 
-
-
-
-
-//eyecatch images
-//images are scaled to fill box then centered and cropped
-
-img.left_top_boxes { //these are not cropped
-	width: 100%;
-}
-
-img.left_bottom {
-	width: 100%;
-	position: relative;
-	top: -84.6px; //centers scaled image in div
-}
-
-
-img.middle_top {
-	height: 100%;
-	position: relative;
-	left: -201.7px;
-}
-
-img.middle_bottom {
-	height: 100%;
-	position: relative;
-	left: -50px;
-}
-
-
-img.right_top {
-	width: 100%;
-	position: relative;
-	top: -30px;
-}
-
-img.right_bottom {
-	height: 100%;
-	position: relative;
-	left: -99px; 
-}
 
 
 
@@ -139,8 +99,8 @@ img.right_bottom {
 div.caption {
 	display: none;
 	z-index: 9000;
-	background-color: transparent;
-	opacity: 0.8;
+	background-color: #ffffff;
+	opacity: 0.6;
 	position: absolute;
 	top: inherit;
 	left: inherit;
@@ -222,21 +182,20 @@ h2.homepage {
 
 #homepage_text {
 	clear: both;
-	max-width: 1200px;
-	min-width: 900px;
+	width: 1000px;
 	font-size: 12pt;
 	text-align: left;
 }
 
 ul.homepage {
-	max-width: 1200px;
-	min-width: 900px;
+	width: 1000px;
 	font-size: 12pt;
 	text-align: left;
 }
 
 #homepage_textarea {
-	width: 1200px;
+	clear: both;
+	width: 1000px;
 	background-color: transparent;
 	margin: 0 0 0 0;
 	padding: 5px 10px 15px 10px;

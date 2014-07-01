@@ -1,6 +1,6 @@
 <div id="banner_top">
-	<%= image_tag 'igp_website_alpha_banner_text.png', :id => 'banner_text' %>
-	<%= image_tag 'igp_website_banner.jpg', :id => 'banner_img' %>
+	<%= image_tag 'banner_text_1020.png', :id => 'banner_text' %>
+	<%= image_tag 'banner_1020.jpg', :id => 'banner_img' %>
 </div>
 
 
@@ -12,52 +12,43 @@
 		<div id="left_top_container">
 			<ul class="layout">
 				<li>
-					<div class="imagebox" id="left_top_boxes">
+					<div class="imagebox" id="left_top_boxes" style="background-image: url(<%= @recentvids[8].thumb %>);">
 						<div class="caption" rel="<%= '#'+@recentvids[8].vid %>" ><span class="caption"><%= @recentvids[8].name %></span></div>
-						<%= image_tag @recentvids[8].thumb, :class => 'left_top_boxes' %>
 					</div>
-					<div class="imagebox" id="left_top_boxes">
+					<div class="imagebox" id="left_top_boxes" style="background-image: url(<%= @recentvids[7].thumb %>);">
 						<div class="caption" rel="<%='#'+@recentvids[7].vid %>" ><span class="caption"><%= @recentvids[7].name %></span></div>
-						<%= image_tag @recentvids[7].thumb, :class => 'left_top_boxes' %>
 					</div>
 				</li>
-					<div class="imagebox" id="left_top_boxes">
+					<div class="imagebox" id="left_top_boxes" style="background-image: url(<%= @recentvids[6].thumb %>);">
 						<div class="caption" rel="<%= '#'+@recentvids[6].vid %>" ><span class="caption"><%= @recentvids[6].name %></span></div>
-						<%= image_tag @recentvids[6].thumb, :class => 'left_top_boxes' %>
 					</div>
-					<div class="imagebox" id="left_top_boxes">
+					<div class="imagebox" id="left_top_boxes" style="background-image: url(<%= @recentvids[5].thumb %>);">
 						<div class="caption" rel="<%= '#'+@recentvids[5].vid %>" ><span class="caption"><%= @recentvids[5].name %></span></div>
-						<%= image_tag @recentvids[5].thumb, :class => 'left_top_boxes' %>
 					</div>
 				<li>
 				</li>
 			</ul>
 		</div>
-		<div class="imagebox" id="left_bottom">
+		<div class="imagebox" id="left_bottom" style="background-image: url(<%= @recentvids[4].thumb %>);">
 			<div class="caption" rel="<%= '#'+@recentvids[4].vid %>" ><span class="caption"><%= @recentvids[4].name %></span></div>
-			<%= image_tag @recentvids[4].thumb, :class => 'left_bottom' %>
 		</div>
 	</div>
 
 	<div id='middleblock'>
-		<div class="imagebox" id="middle_top">
+		<div class="imagebox" id="middle_top" style="background-image: url(<%= @recentvids[3].thumb %>);">
 			<div class="caption" rel="<%= '#'+@recentvids[3].vid %>" ><span class="caption"><%= @recentvids[3].name %></span></div>
-			<%= image_tag @recentvids[3].thumb, :class => 'middle_top' %>
 		</div>
-		<div class="imagebox" id="middle_bottom">
+		<div class="imagebox" id="middle_bottom" style="background-image: url(<%= @recentvids[2].thumb %>);">
 			<div class="caption" rel="<%= '#'+@recentvids[2].vid %>" ><span class="caption"><%= @recentvids[2].name %></span></div>
-			<%= image_tag @recentvids[2].thumb, :class => 'middle_bottom' %>
 		</div>
 	</div>
 
 	<div id='rightblock'>
-		<div class="imagebox" id="right_top">
+		<div class="imagebox" id="right_top" style="background-image: url(<%= @recentvids[1].thumb %>);">
 			<div class="caption" rel="<%= '#'+@recentvids[1].vid %>" ><span class="caption"><%= @recentvids[1].name %></span></div>
-			<%= image_tag @recentvids[1].thumb, :class => 'right_top' %>
 		</div>
-		<div class="imagebox" id="right_bottom">
+		<div class="imagebox" id="right_bottom" style="background-image: url(<%= @recentvids[0].thumb %>);">
 			<div class="caption" rel="<%= '#'+@recentvids[0].vid %>" ><span class="caption"><%= @recentvids[0].name %></span></div>
-			<%= image_tag @recentvids[0].thumb, :class => 'right_bottom' %>
 		</div>
 	</div>
 
@@ -84,9 +75,7 @@
 
 
 <% @recentvids.each do |video| %>
-	<div class="overlay" id="<%= video.vid %>">
-		<iframe class="player_overlay" src="//player.vimeo.com/video/<%= video.vid %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	</div>
+	<div class="overlay" id="<%= video.vid %>">&nbsp;</div>
 <% end %>
 
 
@@ -96,13 +85,10 @@ $(document).ready(function() {
 	//show video titles on hover
 	$(".imagebox").mouseenter(function() {
 		var caption_div = $(this).find("div");
-		var thumbnail = $(this).find("img");
-		thumbnail.css({"opacity":"0.4"});
 		caption_div.show();
 		
 	}).mouseleave(function() {
 		$(this).find("div").hide();
-		$(this).find("img").css({"opacity":"1.0"});
 	});
 
 	//show player overlay on click
@@ -124,7 +110,6 @@ $(document).ready(function() {
 
 });
 
-//functions
 
 function show_overlay(id) {
 	$(".darkmask").fadeIn(500);
@@ -132,14 +117,18 @@ function show_overlay(id) {
 	//determine anchor points to center overlay div 
 	var anchor_top = ($(window).height() - 600) / 2;
 	var anchor_left = ($(window).width() - 1000) / 2;
+	var vimeo_id = id.replace("#","");
 	$(id).css({"top":anchor_top, "left":anchor_left});
 
+	//inject vimeo player (avoid loading until we actually want to see it)
+	$(id).html('<iframe class="player_overlay" src="//player.vimeo.com/video/'+vimeo_id+'"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 	$(id).fadeIn(500);
 }
 
 function hide_overlay() {
 	$(".overlay").fadeOut(200);
 	$(".darkmask").fadeOut(200);
+	$(".overlay").html("&nbsp;");
 }
 
 

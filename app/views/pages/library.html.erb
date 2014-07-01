@@ -24,22 +24,18 @@
 
 <% @videos.each do |video| %>
 
-<!--<li class="vid_title" id="<%=video.vid + "t"%>">
-	<h2 class="vid_title"><%= link_to video.name, {:controller => "pages", :action => "video", :vid => video.vid, :name => video.name}, :remote => true %></h2>
-</li>-->
-
 <li class="library">
 	<div class="video_thumbnail" id="<%=video.vid%>">
 		<%= link_to(image_tag("playbutton.png", :class => "playbutton"), :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true) %>
 		<%= image_tag video.thumb, :class => "vid_thumbnail" %>
 	</div>
 
-  <h2 class="vid_title"><%= video.name %></h2>
-  <p class="vid_description"><%= raw(video.description) %></p>
+	<h2 class="vid_title"><%= video.name %></h2>
+	<p class="vid_description"><%= raw(video.description) %></p>
 
-  <span class="expandbtn"><%= link_to "Show more", :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true %></span>
+	<span class="expandbtn"><%= link_to "Expand", :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true %></span>
 
-  <span class="collapsebtn"><%= link_to "Show less", :controller => "pages", :action => "close_video", :vid => video.vid, :name => video.name, :thumb => video.thumb, :remote => true %></span>
+	<span class="collapsebtn"><%= link_to "Collapse", :controller => "pages", :action => "close_video", :vid => video.vid, :name => video.name, :thumb => video.thumb, :remote => true %></span>
 
 </li>
 
@@ -53,50 +49,52 @@
 
 $(document).ready(function() {
 
-  //album button rollover effect
-  $(".album_button").mouseenter(function() {
-    $(this).css({"background":"linear-gradient(#FFFFFF, #F0F0F0)"});
-  }).mouseleave(function() {
-    $(this).css({"background":"linear-gradient(#F8F8F8, #E0E0E0)"});
-  });
+	//album button rollover effect
+	$(".album_button").mouseenter(function() {
+	  $(this).css({"background":"linear-gradient(#FFFFFF, #F0F0F0)"});
+	}).mouseleave(function() {
+	  $(this).css({"background":"linear-gradient(#F8F8F8, #E0E0E0)"});
+	});
 
-  //play button rollover effects
+	//play button rollover effects
 	$(".video_thumbnail").mouseenter(function() { //highlight playbutton on hover
 		$(this).find(".playbutton").css({"opacity":"0.6"});
 	}).mouseleave(function() { 
 		$(this).find(".playbutton").css({"opacity":"0.4"});
 	}).click(function() { //expand video & description on click
-    var vidblock = $(this).closest("li");
-    expand_vid(vidblock);
-  });
+	  var vidblock = $(this).closest("li");
+	  expand_vid(vidblock);
+	});
 
-  $(".expandbtn").click(function() { //expand video & description
-    var vidblock = $(this).closest("li");
-    expand_vid(vidblock);
-  });
+	//expand video & description
+	$(".expandbtn").click(function() { 
+	  var vidblock = $(this).closest("li");
+	  expand_vid(vidblock);
+	});
 
-  $(".collapsebtn").click(function() { //collapse video & description
-    var vidblock = $(this).closest("li");
-    collapse_vid(vidblock);
-  });
+	//collapse video & description
+	$(".collapsebtn").click(function() { 
+	  var vidblock = $(this).closest("li");
+	  collapse_vid(vidblock);
+	});
 
 });
 
 
 function expand_vid(vidblock) {
-  vidblock.css({"height":"auto"});
-  vidblock.find("p").css({"height":"auto"});
-  vidblock.find(".collapsebtn").css({"display":"inline"});
-  vidblock.find(".expandbtn").css({"display":"none"});
-  vidblock.find("div").css({"width":"100%"});
+	vidblock.css({"height":"auto", "background":"linear-gradient(#B0B0B0, #888888)", "color":"#F0F0F0", "box-shadow":"3px 3px 4px #333"});
+	vidblock.find("p").css({"height":"auto"});
+	vidblock.find(".collapsebtn").css({"display":"block"});
+	vidblock.find(".expandbtn").css({"display":"none"});
+	vidblock.find("div").css({"width":"100%"});
 };
 
 function collapse_vid(vidblock) {
-  vidblock.css({"height":"200px"});
-  vidblock.find("p").css({"height":"10em"});
-  vidblock.find(".expandbtn").css({"display":"inline"});
-  vidblock.find(".collapsebtn").css({"display":"none"});
-  vidblock.find("div").css({"width":""});
+	vidblock.css({"height":"200px", "background":"transparent", "color":"", "box-shadow":""});
+	vidblock.find("p").css({"height":"10em"});
+	vidblock.find(".expandbtn").css({"display":"inline"});
+	vidblock.find(".collapsebtn").css({"display":"none"});
+	vidblock.find("div").css({"width":""});
 };
 
 </script>

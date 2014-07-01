@@ -1,5 +1,6 @@
 
 //exchange the contents of the given div with the vimeo embedded player when user clicks the thumbnail
-$("#" + <%= params[:vid] %>).html('<iframe src="//player.vimeo.com/video/<%= params[:vid] %>?title=0&amp;byline=0&amp;portrait=0;"  webkitallowfullscreen mozallowfullscreen allowfullscreen class="library_player"></iframe>');
-
+//replace thumbnail with vimeo embedded player
+var vidblock = $("#" + <%= params[:vid] %>)
+vidblock.html('<iframe src="//player.vimeo.com/video/<%= params[:vid] %>?title=0&amp;byline=0&amp;portrait=0;"  webkitallowfullscreen mozallowfullscreen allowfullscreen class="library_player"></iframe>');
 
