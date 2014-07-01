@@ -1,5 +1,55 @@
 //css styles for video library page
 
+//header and search bar
+
+#searchbar {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 8px 8px 8px 8px;
+	margin: 0 0 0 0;
+	//background: linear-gradient(#F8F8F8, #E0E0E0);
+	background: linear-gradient(#B0B0B0, #D8D8D8);
+	box-shadow: 2px 2px 3px #555;
+	z-index: 1000;
+}
+
+#albums_bar {
+	position: relative;
+	top: 0px;
+	left: 15px;
+	//padding-top: 10px;
+	//padding-bottom: 20px;
+	margin-right: 20px;
+	padding: 10px 10px 20px 10px;
+	min-width: 900px;
+	min-height: 20px;
+	//max-width: 1200px;
+	background: linear-gradient(#F0F0F0, #D8D8D8);
+	box-shadow: 2px 2px 3px #555;
+	z-index: 999;
+}
+
+div.album_button {
+	float: left;
+	//background-color: #C0C0C0;
+	padding: 5px 3px 5px 3px;
+	margin: 2px 2px 2px 2px;
+	background: linear-gradient(#F8F8F8, #E0E0E0);
+	box-shadow: 2px 2px 3px #555;
+	cursor: pointer;
+}
+
+a.album {
+	color: #333;
+	//background-color: #909090;
+	padding: 5px 5px 5px 5px;
+	text-decoration: none;
+}
+
+
+//video blocks
+
 ul.library {
 	list-style-type: none;
 	//padding-start: 0px;
@@ -10,88 +60,75 @@ ul.library {
 }
 
 li.library {
-	padding-right: 10px;
-	padding-left: 10px;
-}
-
-li.vid_title {
+	padding: 5px 10px 5px 10px;
+	margin: 20px 0px 10px 0px;
 	clear: both;
-	padding-right: 10px;
-	padding-left: 10px;
-	padding-top: 15px;
+	height: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
-img.vid_thumbnail {
-	height: 281px;
-	width: 500px;
-}
-
+//li.vid_title {
+//	clear: both;
+//	padding-right: 10px;
+//	padding-left: 10px;
+//	padding-top: 15px;
+//}
 
 h2.vid_title {
-	max-width: 1200px;
-	min-width: 900px;
-
+	//max-width: 1200px;
+	//min-width: 900px;
+	font-size: 16px;
+	margin: 0 0 5px 0;
 }
 
-p.vid_description {
-	max-width: 1200px;
-	min-width: 900px;
-	min-height: 300px;
-}
-
-div.vid_thumbnail {
+div.video_thumbnail {
 	float: left;
 	padding-right: 15px;
 	padding-bottom: 15px;
+	margin: 2px 5px 0px 0px;
 }
 
-div.album_button {
-	float: left;
-	background-color: #C0C0C0;
-	padding: 7px 3px 7px 3px;
-	margin: 2px 2px 2px 2px;
+img.vid_thumbnail {
+	//height: 281px;
+	//width: 500px;
+	height: 180px;
+	width: 320px;
+	border: 1px solid #555;
+	box-shadow: 3px 3px 4px #555;
 }
 
-a:link.album {
-	color: white;
-	background-color: #909090;
-	padding: 5px 5px 5px 5px;
+
+p.vid_description {
+	height: 10em;
+	min-width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-a:selected.album {
-	color: white;
-	background-color: #909090;
-}
 
-a:visited.album {
-	color: white;
-	background-color: #909090;
-}
-
-a:hover.album {
-	color: white;
-	background-color: #606060;
-	padding: 5px 5px 5px 5px;
-}
-
-#searchbar {
-	background-color: #909090;
-	padding: 8px 8px 8px 8px;
-	margin: 0 0 0 0;
-	list-style-type: none;
-}
-
-#albums_bar {
-	padding-top: 10px;
-	padding-bottom: 20px;
-	min-width: 900px;
-	max-width: 1200px;
-}
 
 .playbutton {
 	position: absolute;
 	top: inherit;
 	left: inherit;
-	padding: 90px 200px 90px 200px;
+	padding: 40px 110px 40px 110px;
 	opacity: 0.4;
+}
+
+iframe.library_player {
+	width: 1000px;
+	height: 562px;
+	border: 1px solid #555;
+	box-shadow: 3px 3px 4px #555;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+span.expandbtn {
+	display: inline
+}
+
+span.collapsebtn {
+	display: none;
 }
