@@ -5,39 +5,58 @@
 
 //staff page styles
 
+p.history {
+	//padding-left: 40px;
+	//padding-right: 40px;
+	text-indent: 25px;
+}
+
+div.staff_photo {
+	float: left;
+	margin: 8px 20px 8px 0px;
+	padding: 0;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #333;
+	box-shadow: 3px 3px 2px #333;
+}
+
 img.staff_photo {
-	margin-right: 10px;
-	margin-bottom: 5px;
-	width: 300px;
+	width: 100%;
+	height: 100%;
 }
 
-
-p.staff_list {
-	font-size: 18px;
+div.staff_bio {
 	float: left;
+	//min-height: 200px;
+	height: 200px;
 }
 
-
-img.staff_photo_test {
-	margin-right: 10px;
-	margin-bottom: 5px;
-	width: 300px;
-	float: left;
-}
-
-
-ul.staff_list {
+ul.about_page {
 	list-style-type: none;
+	margin: 10px 0px 30px 0px;
 	padding: 0;
+}
+
+.staff_list {
+	clear: both;
+	list-style-type: none;
+	padding: 10px 20px 10px 15px;
+	margin: 5px 30px 5px 30px;
+}
+
+.former_staff_list {
+	clear: both;
+	list-style-type: none;
+	padding: 5px 30px 5px 60px;
 	margin: 0;
 }
 
-
-ul.layout {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
+.staff_h2 {
+	clear: both;
+	margin: 20px 30px 10px 30px;
 }
+
 
 
 //supporters page styles
@@ -51,4 +70,29 @@ td.b1 {
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
+	line-height: 26px;
+}
+
+li.supporters {
+	clear: both;
+	display: block;
+	width: 100%;
+	//margin: 10px 15px 10px 25px;
+	padding: 0px;
+	margin: 10px auto 10px auto;
+	text-align: center;
+}
+
+.supporter_block {
+	float: left;
+	text-align: center;
+	//margin: auto auto auto auto;
+	padding: 20px;
+	vertical-align: center;
+	//width: 30%;
+}
+
+hr {
+	clear: both;
+	margin: 20px 50px 20px 50px;
 }

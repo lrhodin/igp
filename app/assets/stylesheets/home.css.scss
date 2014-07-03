@@ -111,7 +111,6 @@ div.caption {
 	color: #333;
 	font-size: 14px;
 	font-weight: bold;
-	//padding: 6px 14px 200px 6px;
 }
 
 span.caption { //necessary for placing text at bottom
@@ -135,6 +134,25 @@ div.overlay {
 	position: fixed;
 }
 
+div.home_closebox {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	height: 28px;
+	width: 28px;
+	z-index: 11000;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+div.video_holder {
+	background: transparent;
+	z-index: 10001;
+	padding: 0;
+	margin: 0;
+}
+	
+
 iframe.player_overlay{
 	position: absolute;
 	top: 47px;
@@ -155,6 +173,7 @@ div.darkmask {
 	background-color: #333;
 	display: none;
 }
+
 
 
 
