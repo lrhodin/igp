@@ -114,7 +114,7 @@ $(document).ready(function() {
 function show_overlay(id) {
 	//inject vimeo player (avoid loading until we actually want to see it)
 	var vimeo_id = id.replace("#","");
-	$(id).html('<iframe class="player_overlay" src="//player.vimeo.com/video/'+vimeo_id+'"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+	$(id).html('<iframe class="player_overlay" src="//player.vimeo.com/video/'+vimeo_id+'?title=1"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 	$(".darkmask").fadeIn(500);
 
 	//determine anchor points to center overlay div 

@@ -68,6 +68,7 @@ ul.library {
 }
 
 li.library {
+	position: relative;
 	padding: 5px 10px 5px 10px;
 	margin: 20px 0px 10px 0px;
 	clear: both;
@@ -96,21 +97,68 @@ li.library {
 	100% {height: 200px;}
 }
 
+li.library .vid_closebox {
+	position: absolute;
+	z-index: 9000;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+	//margin: 2px 2px 2px 2px;
+	display: none;
+
+	a {
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		font-size: 16px;
+		line-height: 16px;
+		text-decoration: none;
+		color: #555;
+		padding: 2px 2px 2px 2px;
+		width: 16px;
+		height: 16px;
+		background: linear-gradient(#F8F8F8, #E0E0E0);
+		box-shadow: 2px 2px 3px #555;
+	}
+}
 
 h2.expanded_title {
-	font-size: 18px;
+	font-size: 20px;
 	margin: 15px 50px 0px 50px;
 	display: none;
+	a {
+		text-decoration: none;
+		line-height: 22px;
+		color: #F0F0F0;
+	}
 }
 
 h2.vid_title {
 	font-size: 16px;
-	margin: 0 0 5px 0;
+	margin: 0 0 3px 0;
 	display: normal;
+	a {
+		text-decoration: none;
+		line-height: 18px;
+		color: #333;
+	}
 }
 
 div.video_thumbnail {
 	float: left;
+	//padding-right: 15px;
+	//padding-bottom: 15px;
+	padding: 0;
+	height: 180px;
+	width: 320px;
+	margin: 2px 15px 15px 0px;
+	border: 1px solid #555;
+	box-shadow: 3px 3px 4px #555;
+}
+
+div.video_thumbnail_empty {
+	float: left;
+	padding: 0;
 	padding-right: 15px;
 	padding-bottom: 15px;
 	margin: 2px 5px 0px 0px;
@@ -119,21 +167,57 @@ div.video_thumbnail {
 img.vid_thumbnail {
 	//height: 281px;
 	//width: 500px;
-	height: 180px;
-	width: 320px;
-	border: 1px solid #555;
-	box-shadow: 3px 3px 4px #555;
+	//height: 180px;
+	//width: 320px;
+	height: 100%;
+	width: 100%;
+	//border: 1px solid #555;
+	//box-shadow: 3px 3px 4px #555;
 }
 
+div.description_block {
+	height: 170px;
+	overflow: hidden;
+	//text-overflow: ellipsis;
+	line-height: 13px; 
+	max-width: 900px;
+}
+
+span.vid_info {
+	//padding: 3 3 3 3;
+	margin: 0px 0px 15px 0px;
+	font-size: 11px;
+	//background: linear-gradient(#F8F8F8, #E0E0E0);
+	//box-shadow: 2px 2px 3px #333;
+	//position: relative;
+	//bottom: 0px;
+	//min-width: 500px;
+	display: inline;
+}
+
+div.vid_info_expanded {
+	font-size: 12px;
+	margin: 1px 50px 0px 50px;
+	display: none;
+}
 
 p.vid_description {
-	height: 10em;
+	//height: 10em;
+	font-size: 13px;
 	min-width: 500px;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	//overflow: hidden;
+	//text-overflow: ellipsis;
 }
 
-
+p.vimeo_link {
+	font-size: 15px;
+	text-align: center;
+	padding: 20px 0px 0px 0px;
+	display: none;
+	a {
+		color: #F0F0F0;
+	}
+}
 
 .playbutton {
 	position: absolute;
@@ -167,18 +251,27 @@ iframe.library_player {
 }
 
 span.expandbtn {
-	display: inline
+	//display: inline
 }
 
-span.collapsebtn {
+div.collapsebtn {
 	display: none;
-	width: 90%;
+	width: 100%;
 	color: #F0F0F0;
 	text-align: center;
 	margin-top: 30px;
 	margin-bottom: 10px;
+	text-align: center;
 
 	a {
 		color: #F0F0F0;
 	}
+}
+
+.expand { //general class for video expand function
+	cursor: pointer;
+}
+
+.collapse {
+	cursor: pointer;
 }
