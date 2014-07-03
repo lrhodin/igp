@@ -61,38 +61,51 @@ ul.about_page {
 
 //supporters page styles
 
-td.b2 {
-	font-size: 16px;
-	text-align: center;
-}
 
-td.b1 {
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	line-height: 26px;
+ul.supporters {
+	list-style-type: none;
+	padding: 40px 0px 10px 0px;
+	margin: 0;
+
+	a {
+		text-decoration: none;
+		color: #333;
+	}
+	a:hover { color: #888 }
 }
 
 li.supporters {
 	clear: both;
-	display: block;
-	width: 100%;
+	//display: block;
+	//width: 100%;
 	//margin: 10px 15px 10px 25px;
-	padding: 0px;
-	margin: 10px auto 10px auto;
+	padding: 10px auto 10px auto;
+	margin: 10px 20px 10px 60px;
 	text-align: center;
 }
 
 .supporter_block {
 	float: left;
 	text-align: center;
-	//margin: auto auto auto auto;
+	margin: 0;
 	padding: 20px;
-	vertical-align: center;
-	//width: 30%;
+	width: 250px;
+}
+
+p.supporter_caption {
+	font-size: 18px;
+}
+
+span.supporter_textonly {
+	//float: left;
+	padding-right: 45px; 
+	padding-left: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 26px;
 }
 
 hr {
 	clear: both;
-	margin: 20px 50px 20px 50px;
+	margin: 20px 80px 20px 50px;
 }
