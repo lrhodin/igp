@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   # get most recent 9 videos for homepage mosaic
   def home
     @videos = Video.order("date DESC")
@@ -14,8 +13,16 @@ class PagesController < ApplicationController
       @videos = Video.where(Album: params[:album])
       @album = params[:album]
     elsif params[:search]
-	#need more complex search method, but using 'description like' for now since it catches more than name only
-      @videos = Video.where("description like ?", "%#{params[:search]}%")
+      # Slpit search string into keywords
+      @keywords = params[:search].strip.split(/\s+/).uniq
+      @videos = []
+      @found_videos = []
+
+      # Match each keyword
+      @keywords.each do |keyword|
+        @found_videos = @found_videos.concat Video.where("(description like ? OR name like ?)", "%" + keyword + "%", "%" + keyword + "%")
+        @videos = @found_videos.flatten.group_by{|x| x}.sort_by{|k, v| -v.size}.map(&:first)
+      end
     else
       @videos = Video.order("date DESC")
     end
