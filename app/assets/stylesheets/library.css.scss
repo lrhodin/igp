@@ -50,6 +50,17 @@ a.album {
 	text-decoration: none;
 }
 
+#sort_bar {
+	position: relative;
+	top: inherit;
+	left: 15px;
+	padding: 0; 
+	margin: 8px 10px 10px 0px; 
+	width: 900px;
+
+	a { color: #333 }
+	a:hover { color: #888;}
+}
 
 //video blocks
 
