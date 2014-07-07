@@ -10,10 +10,23 @@ class PagesController < ApplicationController
   def library
     @albums = Video.uniq.pluck(:album).sort()
     if params[:album]
-      @videos = Video.where(Album: params[:album])
-      @album = params[:album]
+      if params[:sort]
+        if params[:sort] == 'date'
+          @videos = Video.where(Album: params[:album]).order("date desc")
+          @album = params[:album]
+        elsif params[:sort] == 'title'
+          @videos = Video.where(Album: params[:album]).order("name asc")
+          @album = params[:album]
+        else
+          @videos = Video.where(Album: params[:album])
+          @album = params[:album]
+        end
+      else
+        @videos = Video.where(Album: params[:album])
+        @album = params[:album]
+      end
     elsif params[:search]
-      # Slpit search string into keywords
+      # Split search string into keywords
       @keywords = params[:search].strip.split(/\s+/).uniq
       @videos = []
       @found_videos = []
@@ -22,6 +35,12 @@ class PagesController < ApplicationController
       @keywords.each do |keyword|
         @found_videos = @found_videos.concat Video.where("(description like ? OR name like ?)", "%" + keyword + "%", "%" + keyword + "%")
         @videos = @found_videos.flatten.group_by{|x| x}.sort_by{|k, v| -v.size}.map(&:first)
+      end
+    elsif params[:sort]
+      if params[:sort] == 'date'
+        @videos = Video.order("date DESC")
+      elsif params[:sort] == 'title'
+        @videos = Video.order("name ASC")
       end
     else
       @videos = Video.order("date DESC")

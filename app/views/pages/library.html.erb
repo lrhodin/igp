@@ -22,7 +22,19 @@
 			<% end %>
 
 		<% end %>
-</div>
+  </div>
+
+  <% if not @album then %>
+    <div id = "sort_bar">
+		  <div class="sort_button"><%= link_to 'Date', 'library?sort=date', html_options = {:class => "sort"}%></div>
+		  <div class="sort_button"><%= link_to 'Title', 'library?sort=title', html_options = {:class => "sort"}%></div>
+    </div>
+  <% else %>
+    <div id = "sort_bar">
+		  <div class="sort_button"><%= link_to 'Date', 'library?sort=date&album='.concat(@album), html_options = {:class => "sort"}%></div>
+		  <div class="sort_button"><%= link_to 'Title', 'library?sort=title&album='.concat(@album), html_options = {:class => "sort"}%></div>
+    </div>
+  <% end %>
 
 
 
