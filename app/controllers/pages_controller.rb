@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   # get most recent 9 videos for homepage mosaic
   def home
-    @videos = Video.order("date DESC")
+    @videos = Video.where(:frontpage => true).order("date DESC")
     @recentvids = @videos[0...9]
   end
 

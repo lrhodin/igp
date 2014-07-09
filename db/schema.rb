@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109155612) do
+ActiveRecord::Schema.define(version: 20140709212132) do
 
   create_table "videos", force: true do |t|
     t.text     "name",        limit: 255
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131109155612) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "album"
+    t.boolean  "frontpage",               default: true
   end
 
 end

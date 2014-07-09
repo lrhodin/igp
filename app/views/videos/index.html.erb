@@ -1,5 +1,8 @@
 <h1>Video Library Admin</h1>
 
+<!-- To sync videos with vimeo -->
+<%= link_to 'Sync Videos', 'videos/sync' %>
+
 <div id="vidlist_holder">
 
 <% @videos.each do |video| %>
@@ -9,9 +12,15 @@
   <p><strong>Name:</strong> <%= video.name %></p>
   <p><strong>Description:</strong> <%= video.description.truncate(300, separator: ' ') %></p>
   <p><strong>Album(s):</strong> <%= video.album %></p>
+  <p><strong>Frontpage:</strong> <%= video.frontpage %></p>
 
   <p class="vidlist_options_block"><strong>
     <%= link_to 'Vimeo Page', "http://vimeo.com/#{video.vid}", target: '_blank' %> |
+    <% if video.frontpage == true then %>
+      <%= link_to("Remove from Frontpage", video_path(video.id, :video => {:frontpage => false}), :method => :put) %> |
+    <% else %>  
+      <%= link_to("Add to Frontpage", video_path(video.id, :video => {:frontpage => true}), :method => :put) %> |
+    <% end %>
     <%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
   </p>
 
@@ -21,9 +30,6 @@
 </div>
 
 
-
-
-
-<!-- disabling this because it's really dangerous without authentication
+<!-- Manual entry should not be needed with sync
 <%= link_to 'New Video', new_video_path %>
 -->

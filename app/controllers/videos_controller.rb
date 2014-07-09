@@ -79,7 +79,7 @@ class VideosController < ApplicationController
   def update
     respond_to do |format|
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
+        format.html { redirect_to videos_url, notice: 'Video was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -106,6 +106,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:name, :description, :thumb, :date, :vid)
+      params.require(:video).permit(:name, :description, :thumb, :date, :vid, :frontpage)
     end
 end
