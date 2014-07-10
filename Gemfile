@@ -46,3 +46,6 @@ end
 
 gem 'vimeo'
 gem 'thin'
+
+# Pony for email delivery
+gem 'pony'

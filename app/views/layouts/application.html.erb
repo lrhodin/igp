@@ -14,9 +14,10 @@
 	  <ul class="navbar">
 	    <li class="nav_logo"><%= image_tag "igp_logo_25px.png" %></li>
 	    <li class="nav_home">Interactive Geology Project</li>
-	    <li class="nav_button" rel="library">Video Library</li>
-	    <li class="nav_button" rel="supporters">Supporters</li>
-	    <li class="nav_button" rel="staff">About Us</li>
+	    <li class="nav_button" rel="pages/library">Video Library</li>
+	    <li class="nav_button" rel="pages/supporters">Supporters</li>
+	    <li class="nav_button" rel="pages/staff">About Us</li>
+	    <li class="nav_button" rel="inquiries/new">Contact Us</li>
 	  </ul>
   </div>
 </div>
@@ -50,7 +51,7 @@ $(document).ready(function() {
       //nav button links
       .click(function() {
         var target = $(this).attr("rel");
-        window.location.href = "/pages/"+target;
+        window.location.href = "/"+target;
       });
 
   $(".nav_home").mouseenter(function() {

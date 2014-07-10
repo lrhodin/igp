@@ -1,0 +1,11 @@
+<h1>Contact Us</h1>
+<p>Please fill out the form below and we'll get back to you as soon as possible.</p>
+ 
+<%= render 'form', :inquiry => @inquiry %>
+
+<script>
+$(document).ready(function() {
+  //highlight appropriate nav tab
+  $("li[rel$='inquiries/new']").toggleClass("nav_button nav_button_active");
+});
+</script>
