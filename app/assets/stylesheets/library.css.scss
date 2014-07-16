@@ -50,16 +50,27 @@ a.album {
 	text-decoration: none;
 }
 
-#sort_bar {
+#albuminfo {
 	position: relative;
 	top: inherit;
-	left: 15px;
-	padding: 0; 
-	margin: 8px 10px 10px 0px; 
-	width: 900px;
+	padding: 10px 10px 0px 10px;
+	margin: 10px 0px 5px 15px;
 
-	a { color: #333 }
-	a:hover { color: #888;}
+  h3 {
+    padding: 0;
+    margin: 0 0 6px 0;
+  }
+
+  p {
+    padding: 0;
+    margin: 0 15px 0 0px;
+    font-size: 14px;
+  }
+}
+
+#dmns_logo_small { //This is only used in the temp album description
+	float: left;
+	margin: 0 6px 6px 0;
 }
 
 //video blocks
@@ -72,10 +83,20 @@ ul.library {
 	min-width: 920px;
 }
 
+li.lib_sort {
+	position: relative;
+	padding: 5px 10px 0px 10px;
+	margin: 15px 0px 0px 0px;
+	clear: both;
+
+	a { color: #333 }
+	a:hover { color: #888;}
+}
+
 li.library {
 	position: relative;
 	padding: 5px 10px 5px 10px;
-	margin: 20px 0px 10px 0px;
+	margin: 10px 0px 20px 0px;
 	clear: both;
 	height: 200px;
 	text-overflow: ellipsis;
