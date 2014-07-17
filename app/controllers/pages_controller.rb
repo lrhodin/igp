@@ -56,21 +56,6 @@ class PagesController < ApplicationController
     end
   end
 
-  #replace thumbnail with vimeo player when user clicks thumb
-  def video
-    respond_to do |format|
-      format.html { redirect_to "pages/viewer" }
-      format.js
-    end
-  end
-
-  #put thumbnail back if vimeo player closed
-  def close_video
-    respond_to do |format|
-      format.html { redirect_to "pages/viewer" }
-      format.js
-    end
-  end
 
   #putting in static pages just for clarity's sake
   def supporters

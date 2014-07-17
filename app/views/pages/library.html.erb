@@ -64,24 +64,26 @@
 	
 	<% @videos.each do |video| %>
 	
-	<li class="library">
-		<div class="expand_visible vid_closebox"><%= link_to (image_tag "closebox.png"), :controller => "pages", :action => "close_video", :vid => video.vid, :name => video.name, :thumb => video.thumb, :remote => true %></div>
-		<h2 class="expand_visible expanded_title"><%= link_to video.name, :controller => "pages", :action => "close_video", :vid => video.vid, :name => video.name, :thumb => video.thumb, :remote => true %></h2>
+	<li class="library" id="<%= video.vid %>">
+		<div class="expand_visible vid_closebox"><%= image_tag "closebox.png", :class => "closebox" %></div>
+		<h2 class="expand_visible expanded_title"><%= video.name %></h2>
 		<div class="expand_visible vid_info_expanded">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></div>
-		<div class="video_thumbnail" id="<%=video.vid%>" >
-			<%= link_to image_tag("playbutton.png", :class => "expand_hidden playbutton"), :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true %>
+		<div class="expand_hidden video_thumbnail" id="<%=video.vid%>_thumb">
+			<%= image_tag "playbutton.png", :class => "expand_hidden playbutton" %>
 			<%= image_tag video.thumb, :class => "expand_hidden vid_thumbnail" %>
 		</div>
+    <div class="expand_visible video_player" id="<%= video.vid %>_player">
+    </div>
 	
 		<div class="description_block">
-			<h2 class="expand_hidden vid_title"><%= link_to video.name, :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true %></h2>
+			<h2 class="expand_hidden vid_title"><span class="lightlink"><%= video.name %></span></h2>
 			<span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></span>
 			<p class="vid_description"><%= raw(video.description) %></p>
 			<p class="vimeo_link"><a href="http://vimeo.com/<%= video.vid %>" target="_blank">View or Download on Vimeo</a></p>
 		
-			<div class="expand_visible collapsebtn"><%= link_to "Show Less", :controller => "pages", :action => "close_video", :vid => video.vid, :name => video.name, :thumb => video.thumb, :remote => true %></div>
+			<div class="expand_visible collapsebtn"><span class="darklink">Show Less</span></div>
 		</div>
-		<span class="expand_hidden expandbtn"><%= link_to "Show More", :controller => "pages", :action => "video", :vid => video.vid, :name => video.name, :remote => true %></span>
+		<span class="expand_hidden lightlink expandbtn">Show More</span>
 	
 	</li>
 	
@@ -114,9 +116,32 @@ $(document).ready(function() {
 	  expand_vid(vidblock);
 	});
 
+  //library item link rollover effects (collapsed)
+  $(".lightlink").mouseenter(function() {
+    $(this).css({"color":"#888"});
+  }).mouseleave(function() {
+    $(this).css({"color":"#333"});
+  });
+
+  //library item link rollover effects (expanded)
+  $(".darklink").mouseenter(function() {
+    $(this).css({"color":"#333"});
+  }).mouseleave(function() {
+    $(this).css({"color":"#F0F0F0"});
+  });
+
+  //closebox rollover effect
+  $(".closebox").mouseenter(function() {
+    $(this).css({"opacity":"1"});
+  }).mouseleave(function() {
+    $(this).css({"opacity":"0.7"});
+  });
+
 	//expand video & description
 	$(".expand_hidden").click(function() { 
 	  var vidblock = $(this).closest("li");
+    var vid = vidblock.attr("id");
+    $("#"+vid+"_player").html('<iframe src="//player.vimeo.com/video/'+vid+'?title=0&amp;byline=0&amp;portrait=0;"  webkitallowfullscreen mozallowfullscreen allowfullscreen class="library_player"></iframe>');
 	  expand_vid(vidblock);
 	});
 
@@ -132,7 +157,7 @@ $(document).ready(function() {
 function expand_vid(vidblock) {
 	vidblock.css({"animation":"vid_rolldown 1s", "height":"auto", "background":"linear-gradient(#B0B0B0, #888888)", "color":"#F0F0F0", "box-shadow":"0px 0px 4px 3px #333"});
 	vidblock.find(".description_block").css({"height":"auto", "margin":"0px 50px 0px 50px"});
-	vidblock.find(".video_thumbnail").toggleClass("video_thumbnail video_thumbnail_empty");
+	//vidblock.find(".video_thumbnail").toggleClass("video_thumbnail video_thumbnail_empty");
 	vidblock.find(".vimeo_link").show();
 	vidblock.find(".expand_hidden").hide();
 	vidblock.find(".expand_visible").show();
@@ -141,8 +166,8 @@ function expand_vid(vidblock) {
 };
 
 function collapse_vid(vidblock) {
-	vidblock.find("iframe").hide();
-	vidblock.find(".video_thumbnail_empty").toggleClass("video_thumbnail_empty video_thumbnail");
+	//vidblock.find("iframe").hide();
+	//vidblock.find(".video_thumbnail_empty").toggleClass("video_thumbnail_empty video_thumbnail");
 	vidblock.find(".description_block").css({"height":"170px", "margin":""});
 	vidblock.find(".vimeo_link").hide();
 	vidblock.find(".expand_visible").hide();

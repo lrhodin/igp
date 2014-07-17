@@ -1,2 +1,0 @@
-//replace the vimeo player with the thumbnail & resize window when player closed
-$("#" + <%= params[:vid] %>).html('<%= link_to(image_tag("playbutton.png", :class => "playbutton"), :controller => "pages", :action => "video", :vid => params[:vid], :name => params[:name], :remote => true) %><%= image_tag params[:thumb], :class => "vid_thumbnail" %>');
