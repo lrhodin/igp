@@ -1,5 +1,6 @@
 Igp::Application.routes.draw do
-  get "videos/sync"
+
+  get "albums/sync"
   get "pages/library"
   get "pages/home"
   get "pages/viewer"
@@ -8,6 +9,7 @@ Igp::Application.routes.draw do
   get "pages/staff"
   get "pages/close_video"
   resources :videos
+  resources :albums
 
 
   # The priority is based upon order of creation: first created -> highest priority.

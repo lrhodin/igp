@@ -29,29 +29,6 @@ class VideosController < ApplicationController
   def edit
   end
 
-  # GET /videos/sync
-  def sync
-    albums = Vimeo::Simple::User.albums("coloradoigp")
-    albums.each { |album|
-      album_name = album["title"]
-      videos = Vimeo::Simple::Album.videos(album["id"])
-      videos.each { |video_info|
-        if Video.where(:vid => video_info["id"]).blank?
-          video = Video.new
-          video.name = video_info["title"]
-          video.vid = video_info["id"]
-          video.description = video_info["description"]
-          video.date = video_info["upload_date"]
-          video.thumb = video_info["thumbnail_large"]
-          video.album = album_name
-          video.save
-        end
-      }
-    }
-
-    redirect_to videos_url
-  end
-
   # POST /videos
   # POST /videos.json
   def create

@@ -8,21 +8,21 @@ class PagesController < ApplicationController
 
   # get pages/library
   def library
-    @albums = Video.uniq.pluck(:album).sort()
+    @albums = Album.all.pluck(:name).sort()
     if params[:album]
       if params[:sort]
         if params[:sort] == 'date'
-          @videos = Video.where(Album: params[:album]).order("date desc")
+          @videos = Video.where("album_id = ?", Album.where("name = ?", params[:album])).order("date desc")
           @album = params[:album]
         elsif params[:sort] == 'title'
-          @videos = Video.where(Album: params[:album]).order("name asc")
+          @videos = Video.where("album_id = ?", Album.where("name = ?", params[:album])).order("name asc")
           @album = params[:album]
         else
-          @videos = Video.where(Album: params[:album])
+          @videos = Video.where("album_id = ?", Album.where("name = ?", params[:album]))
           @album = params[:album]
         end
       else
-        @videos = Video.where(Album: params[:album])
+        @videos = Video.where("album_id = ?", Album.where("name = ?", params[:album]))
         @album = params[:album]
       end
     elsif params[:search]

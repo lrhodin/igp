@@ -1,8 +1,5 @@
 <h1>Video Library Admin</h1>
 
-<!-- To sync videos with vimeo -->
-<%= link_to 'Sync Videos', 'videos/sync' %>
-
 <div id="vidlist_holder">
 
 <% @videos.each do |video| %>
@@ -11,7 +8,7 @@
   <p><strong>Date:</strong> <%= video.date %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Vimeo ID:</strong> <%= video.vid %></p>
   <p><strong>Name:</strong> <%= video.name %></p>
   <p><strong>Description:</strong> <%= video.description.truncate(300, separator: ' ') %></p>
-  <p><strong>Album(s):</strong> <%= video.album %></p>
+  <p><strong>Album(s):</strong> <%= video.album.name %></p>
   <p><strong>Frontpage:</strong> <%= video.frontpage %></p>
 
   <p class="vidlist_options_block"><strong>

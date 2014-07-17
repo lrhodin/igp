@@ -28,21 +28,13 @@
   <div id="albuminfo">
     <h3>Album: <%= @album %></h3>
 
-    <!-- When album description is available, just put it here inside <p> </p> tags -->
-
-    <!-- Terrible and temporary fix for album descriptions -->
     <% if @album == "Ancient Landscapes of Colorado with Denver Museum of Nature and Science" %>
       <%= image_tag "dmns_color.jpg", :id => "dmns_logo_small" %>
-      <p>IGP and the Denver Museum of Nature and Science (DMNS) are jointly developing a number of animations for public display and use. For our first project, we are developing animations for the ten paintings at the Colorado Convention Center (CCC), and five paintings at the “Ancient Denvers” exhibit at DMNS that were developed by Kirk Johnson and Jan Vriesen. Shown below are the results of our preliminary efforts.</p>
-    <% elsif @album == "Colorado Geology Vignettes" %>
-      <p>These are work-in-progress clips from a series of 5-10 minute vignettes we are producing that cover the geologic history of Colorado at each major point on the geologic time scale.</p>
-    <% elsif @album == "Finished Projects" %>
-      <p>These are some of our finished projects</p>
-    <% elsif @album == "Igneous Vignette" %>
-      <p>These clips are from a vignette about igneous activity in Colorado from the late Eocene, 40 million years ago, to the middle Miocene, 10 million years ago. The finished movie will be part of the Colorado Geology Vignettes series.</p>
     <% end %>
 
-    <!-- End of terrible and temporary fix for album descriptions -->
+    <p>
+    <%= Album.where("name = ?", @album).pluck(:description).to_s[2..-3] %>
+    </p>
 
   </div>
 <% end %>
@@ -67,7 +59,7 @@
   <li class="library" id="<%= video.vid %>">
     <div class="expand_visible vid_closebox"><%= image_tag "closebox.png", :class => "closebox" %></div>
     <h2 class="expand_visible expanded_title"><%= video.name %></h2>
-    <div class="expand_visible vid_info_expanded">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></div>
+    <div class="expand_visible vid_info_expanded">Date Uploaded: <%= video.date %> | Albums: <%= video.album.name.truncate(33, separator: ' ') %></div>
     <div class="expand_hidden video_thumbnail" id="<%=video.vid%>_thumb">
       <%= image_tag "playbutton.png", :class => "expand_hidden playbutton" %>
       <%= image_tag video.thumb, :class => "expand_hidden vid_thumbnail" %>
@@ -77,7 +69,7 @@
   
     <div class="description_block">
       <h2 class="expand_hidden vid_title"><span class="lightlink"><%= video.name %></span></h2>
-      <span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></span>
+      <span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.name.truncate(33, separator: ' ') %></span>
       <p class="vid_description"><%= raw(video.description) %></p>
       <p class="vimeo_link"><a href="http://vimeo.com/<%= video.vid %>" target="_blank">View or Download on Vimeo</a></p>
     
