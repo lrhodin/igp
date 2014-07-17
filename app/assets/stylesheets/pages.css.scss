@@ -6,55 +6,55 @@
 //staff page styles
 
 p.history {
-	//padding-left: 40px;
-	//padding-right: 40px;
-	text-indent: 25px;
+  //padding-left: 40px;
+  //padding-right: 40px;
+  text-indent: 25px;
 }
 
 div.staff_photo {
-	float: left;
-	margin: 8px 20px 8px 0px;
-	padding: 0;
-	width: 200px;
-	height: 200px;
-	border: 1px solid #333;
-	box-shadow: 3px 3px 2px #333;
+  float: left;
+  margin: 8px 20px 8px 0px;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #333;
+  box-shadow: 3px 3px 2px #333;
 }
 
 img.staff_photo {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 div.staff_bio {
-	float: left;
-	//min-height: 200px;
-	height: 200px;
+  float: left;
+  //min-height: 200px;
+  height: 200px;
 }
 
 ul.about_page {
-	list-style-type: none;
-	margin: 10px 0px 30px 0px;
-	padding: 0;
+  list-style-type: none;
+  margin: 10px 0px 30px 0px;
+  padding: 0;
 }
 
 .staff_list {
-	clear: both;
-	list-style-type: none;
-	padding: 10px 20px 10px 15px;
-	margin: 5px 30px 5px 30px;
+  clear: both;
+  list-style-type: none;
+  padding: 10px 20px 10px 15px;
+  margin: 5px 30px 5px 30px;
 }
 
 .former_staff_list {
-	clear: both;
-	list-style-type: none;
-	padding: 5px 30px 5px 60px;
-	margin: 0;
+  clear: both;
+  list-style-type: none;
+  padding: 5px 30px 5px 60px;
+  margin: 0;
 }
 
 .staff_h2 {
-	clear: both;
-	margin: 20px 30px 10px 30px;
+  clear: both;
+  margin: 20px 30px 10px 30px;
 }
 
 
@@ -63,49 +63,49 @@ ul.about_page {
 
 
 ul.supporters {
-	list-style-type: none;
-	padding: 40px 0px 10px 0px;
-	margin: 0;
+  list-style-type: none;
+  padding: 40px 0px 10px 0px;
+  margin: 0;
 
-	a {
-		text-decoration: none;
-		color: #333;
-	}
-	a:hover { color: #888 }
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  a:hover { color: #888 }
 }
 
 li.supporters {
-	clear: both;
-	//display: block;
-	//width: 100%;
-	//margin: 10px 15px 10px 25px;
-	padding: 10px auto 10px auto;
-	margin: 10px 20px 10px 60px;
-	text-align: center;
+  clear: both;
+  //display: block;
+  //width: 100%;
+  //margin: 10px 15px 10px 25px;
+  padding: 10px auto 10px auto;
+  margin: 10px 20px 10px 60px;
+  text-align: center;
 }
 
 .supporter_block {
-	float: left;
-	text-align: center;
-	margin: 0;
-	padding: 20px;
-	width: 250px;
+  float: left;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  width: 250px;
 }
 
 p.supporter_caption {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 span.supporter_textonly {
-	//float: left;
-	padding-right: 45px; 
-	padding-left: 15px;
-	font-size: 20px;
-	font-weight: bold;
-	line-height: 26px;
+  //float: left;
+  padding-right: 45px; 
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
 }
 
 hr {
-	clear: both;
-	margin: 20px 80px 20px 50px;
+  clear: both;
+  margin: 20px 80px 20px 50px;
 }

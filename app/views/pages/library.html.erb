@@ -1,27 +1,27 @@
 <h1>Video Library</h1>
 
 <div id="searchbar">
-	<%= form_tag 'library', :method => 'get' do %>
-		<%= text_field_tag :search, params[:search], size: 55, :placeholder => 'Find videos by title, keyword, or descripton contents.' %>
-		<%= submit_tag "Search", :name => nil %>  
-	<% end %>
+  <%= form_tag 'library', :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], size: 55, :placeholder => 'Find videos by title, keyword, or descripton contents.' %>
+    <%= submit_tag "Search", :name => nil %>  
+  <% end %>
 </div>
 
 <div id="albums_bar">
-	<% if @album %>
-		<div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
-	<% else %>
-		<div class="album_button_active"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
-	<% end %>
+  <% if @album %>
+    <div class="album_button"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
+  <% else %>
+    <div class="album_button_active"><%= link_to 'All', 'library', html_options = {:class => "album"}%></div>
+  <% end %>
 
-		<% @albums.each do |album| %>	
-			<% if album == @album %>
-				<div class="album_button_active" id="<%= album + '_btn' %>"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
-			<% else %>
-				<div class="album_button" id="<%= album + '_btn' %>"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
-			<% end %>
+    <% @albums.each do |album| %>  
+      <% if album == @album %>
+        <div class="album_button_active" id="<%= album + '_btn' %>"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
+      <% else %>
+        <div class="album_button" id="<%= album + '_btn' %>"><%= link_to album.truncate(33, separator: ' '), 'library?album='.concat(album), html_options = {:class => "album"}%></div>
+      <% end %>
 
-		<% end %>
+    <% end %>
 </div>
 
 <% if @album then %>
@@ -49,45 +49,45 @@
 
 <ul class="library"> 
 
-	<li class="lib_sort">
-	  <% if not @album then %>
-	    <div>
-				Sort by: <%= link_to 'date', 'library?sort=date', html_options = {:class => "sort"}%>, <%= link_to 'title', 'library?sort=title', html_options = {:class => "sort"}%>
-	    </div>
-	  <% else %>
-	    <div>
-	      Sort by: <%= link_to 'date', 'library?sort=date&album='.concat(@album), html_options = {:class => "sort"}%>, <%= link_to 'title', 'library?sort=title&album='.concat(@album), html_options = {:class => "sort"}%>
-	    </div>
-	  <% end %>
-	</li>
-	
-	
-	<% @videos.each do |video| %>
-	
-	<li class="library" id="<%= video.vid %>">
-		<div class="expand_visible vid_closebox"><%= image_tag "closebox.png", :class => "closebox" %></div>
-		<h2 class="expand_visible expanded_title"><%= video.name %></h2>
-		<div class="expand_visible vid_info_expanded">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></div>
-		<div class="expand_hidden video_thumbnail" id="<%=video.vid%>_thumb">
-			<%= image_tag "playbutton.png", :class => "expand_hidden playbutton" %>
-			<%= image_tag video.thumb, :class => "expand_hidden vid_thumbnail" %>
-		</div>
+  <li class="lib_sort">
+    <% if not @album then %>
+      <div>
+        Sort by: <%= link_to 'date', 'library?sort=date', html_options = {:class => "sort"}%>, <%= link_to 'title', 'library?sort=title', html_options = {:class => "sort"}%>
+      </div>
+    <% else %>
+      <div>
+        Sort by: <%= link_to 'date', 'library?sort=date&album='.concat(@album), html_options = {:class => "sort"}%>, <%= link_to 'title', 'library?sort=title&album='.concat(@album), html_options = {:class => "sort"}%>
+      </div>
+    <% end %>
+  </li>
+  
+  
+  <% @videos.each do |video| %>
+  
+  <li class="library" id="<%= video.vid %>">
+    <div class="expand_visible vid_closebox"><%= image_tag "closebox.png", :class => "closebox" %></div>
+    <h2 class="expand_visible expanded_title"><%= video.name %></h2>
+    <div class="expand_visible vid_info_expanded">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></div>
+    <div class="expand_hidden video_thumbnail" id="<%=video.vid%>_thumb">
+      <%= image_tag "playbutton.png", :class => "expand_hidden playbutton" %>
+      <%= image_tag video.thumb, :class => "expand_hidden vid_thumbnail" %>
+    </div>
     <div class="expand_visible video_player" id="<%= video.vid %>_player">
     </div>
-	
-		<div class="description_block">
-			<h2 class="expand_hidden vid_title"><span class="lightlink"><%= video.name %></span></h2>
-			<span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></span>
-			<p class="vid_description"><%= raw(video.description) %></p>
-			<p class="vimeo_link"><a href="http://vimeo.com/<%= video.vid %>" target="_blank">View or Download on Vimeo</a></p>
-		
-			<div class="expand_visible collapsebtn"><span class="darklink">Show Less</span></div>
-		</div>
-		<span class="expand_hidden lightlink expandbtn">Show More</span>
-	
-	</li>
-	
-	<% end %>
+  
+    <div class="description_block">
+      <h2 class="expand_hidden vid_title"><span class="lightlink"><%= video.name %></span></h2>
+      <span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.truncate(33, separator: ' ') %></span>
+      <p class="vid_description"><%= raw(video.description) %></p>
+      <p class="vimeo_link"><a href="http://vimeo.com/<%= video.vid %>" target="_blank">View or Download on Vimeo</a></p>
+    
+      <div class="expand_visible collapsebtn"><span class="darklink">Show Less</span></div>
+    </div>
+    <span class="expand_hidden lightlink expandbtn">Show More</span>
+  
+  </li>
+  
+  <% end %>
 
 </ul>
 
@@ -96,25 +96,25 @@
 <script>
 
 $(document).ready(function() {
-	//highlight appropriate nav tab
-	$("li[rel$='library']").toggleClass("nav_button nav_button_active");
+  //highlight appropriate nav tab
+  $("li[rel$='library']").toggleClass("nav_button nav_button_active");
 
-	//album button rollover effect
-	$(".album_button").mouseenter(function() {
-	  $(this).css({"background":"linear-gradient(#FFFFFF, #F0F0F0)"});
-	}).mouseleave(function() {
-	  $(this).css({"background":"linear-gradient(#F8F8F8, #E0E0E0)"});
-	});
+  //album button rollover effect
+  $(".album_button").mouseenter(function() {
+    $(this).css({"background":"linear-gradient(#FFFFFF, #F0F0F0)"});
+  }).mouseleave(function() {
+    $(this).css({"background":"linear-gradient(#F8F8F8, #E0E0E0)"});
+  });
 
-	//play button rollover effects
-	$(".video_thumbnail").mouseenter(function() { //highlight playbutton on hover
-		$(this).find(".playbutton").css({"opacity":"0.6"});
-	}).mouseleave(function() { 
-		$(this).find(".playbutton").css({"opacity":"0.4"});
-	}).click(function() { //expand video & description on click
-	  var vidblock = $(this).closest("li");
-	  expand_vid(vidblock);
-	});
+  //play button rollover effects
+  $(".video_thumbnail").mouseenter(function() { //highlight playbutton on hover
+    $(this).find(".playbutton").css({"opacity":"0.6"});
+  }).mouseleave(function() { 
+    $(this).find(".playbutton").css({"opacity":"0.4"});
+  }).click(function() { //expand video & description on click
+    var vidblock = $(this).closest("li");
+    expand_vid(vidblock);
+  });
 
   //library item link rollover effects (collapsed)
   $(".lightlink").mouseenter(function() {
@@ -137,52 +137,52 @@ $(document).ready(function() {
     $(this).css({"opacity":"0.7"});
   });
 
-	//expand video & description
-	$(".expand_hidden").click(function() { 
-	  var vidblock = $(this).closest("li");
+  //expand video & description
+  $(".expand_hidden").click(function() { 
+    var vidblock = $(this).closest("li");
     var vid = vidblock.attr("id");
     $("#"+vid+"_player").html('<iframe src="//player.vimeo.com/video/'+vid+'?title=0&amp;byline=0&amp;portrait=0;"  webkitallowfullscreen mozallowfullscreen allowfullscreen class="library_player"></iframe>');
-	  expand_vid(vidblock);
-	});
+    expand_vid(vidblock);
+  });
 
-	//collapse video & description
-	$(".expand_visible").click(function() { 
-	  var vidblock = $(this).closest("li");
-	  collapse_vid(vidblock);
-	});
+  //collapse video & description
+  $(".expand_visible").click(function() { 
+    var vidblock = $(this).closest("li");
+    collapse_vid(vidblock);
+  });
 
 });
 
 
 function expand_vid(vidblock) {
-	vidblock.css({"animation":"vid_rolldown 1s", "height":"auto", "background":"linear-gradient(#B0B0B0, #888888)", "color":"#F0F0F0", "box-shadow":"0px 0px 4px 3px #333"});
-	vidblock.find(".description_block").css({"height":"auto", "margin":"0px 50px 0px 50px"});
-	//vidblock.find(".video_thumbnail").toggleClass("video_thumbnail video_thumbnail_empty");
-	vidblock.find(".vimeo_link").show();
-	vidblock.find(".expand_hidden").hide();
-	vidblock.find(".expand_visible").show();
-	vidblock.find("div").css({"width":"100%"});
-	vidblock.scrollView(); //scroll window to top of vidblock
+  vidblock.css({"animation":"vid_rolldown 1s", "height":"auto", "background":"linear-gradient(#B0B0B0, #888888)", "color":"#F0F0F0", "box-shadow":"0px 0px 4px 3px #333"});
+  vidblock.find(".description_block").css({"height":"auto", "margin":"0px 50px 0px 50px"});
+  //vidblock.find(".video_thumbnail").toggleClass("video_thumbnail video_thumbnail_empty");
+  vidblock.find(".vimeo_link").show();
+  vidblock.find(".expand_hidden").hide();
+  vidblock.find(".expand_visible").show();
+  vidblock.find("div").css({"width":"100%"});
+  vidblock.scrollView(); //scroll window to top of vidblock
 };
 
 function collapse_vid(vidblock) {
-	//vidblock.find("iframe").hide();
-	//vidblock.find(".video_thumbnail_empty").toggleClass("video_thumbnail_empty video_thumbnail");
-	vidblock.find(".description_block").css({"height":"170px", "margin":""});
-	vidblock.find(".vimeo_link").hide();
-	vidblock.find(".expand_visible").hide();
-	vidblock.find(".expand_hidden").show();
-	vidblock.css({"animation":"vid_rollup 0.7s", "height":"200px", "background":"transparent", "color":"", "box-shadow":""});
-	vidblock.find("div").css({"width":""});
-	vidblock.scrollView(); //scroll window to top of vidblock
+  //vidblock.find("iframe").hide();
+  //vidblock.find(".video_thumbnail_empty").toggleClass("video_thumbnail_empty video_thumbnail");
+  vidblock.find(".description_block").css({"height":"170px", "margin":""});
+  vidblock.find(".vimeo_link").hide();
+  vidblock.find(".expand_visible").hide();
+  vidblock.find(".expand_hidden").show();
+  vidblock.css({"animation":"vid_rollup 0.7s", "height":"200px", "background":"transparent", "color":"", "box-shadow":""});
+  vidblock.find("div").css({"width":""});
+  vidblock.scrollView(); //scroll window to top of vidblock
 };
 
 $.fn.scrollView = function() {
-	return this.each(function() {
-		$("html, body").animate( {
-			scrollTop: $(this).offset().top - 50
-		}, 600);
-	});
+  return this.each(function() {
+    $("html, body").animate( {
+      scrollTop: $(this).offset().top - 50
+    }, 600);
+  });
 };
 
 </script>

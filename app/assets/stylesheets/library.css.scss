@@ -3,58 +3,58 @@
 //header and search bar
 
 #searchbar {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	padding: 8px 8px 8px 8px;
-	margin: 0 0 0 0;
-	background: linear-gradient(#B0B0B0, #D8D8D8);
-	box-shadow: 2px 2px 3px #555;
-	z-index: 1000;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  padding: 8px 8px 8px 8px;
+  margin: 0 0 0 0;
+  background: linear-gradient(#B0B0B0, #D8D8D8);
+  box-shadow: 2px 2px 3px #555;
+  z-index: 1000;
 }
 
 #albums_bar {
-	position: relative;
-	top: 0px;
-	left: 15px;
-	margin-right: 20px;
-	padding: 10px 10px 20px 10px;
-	min-width: 900px;
-	min-height: 20px;
-	background: linear-gradient(#F0F0F0, #D8D8D8);
-	box-shadow: 2px 2px 3px #555;
-	z-index: 999;
+  position: relative;
+  top: 0px;
+  left: 15px;
+  margin-right: 20px;
+  padding: 10px 10px 20px 10px;
+  min-width: 900px;
+  min-height: 20px;
+  background: linear-gradient(#F0F0F0, #D8D8D8);
+  box-shadow: 2px 2px 3px #555;
+  z-index: 999;
 }
 
 div.album_button {
-	float: left;
-	padding: 5px 3px 5px 3px;
-	margin: 2px 2px 2px 2px;
-	background: linear-gradient(#F8F8F8, #E0E0E0);
-	box-shadow: 2px 2px 3px #555;
-	cursor: pointer;
+  float: left;
+  padding: 5px 3px 5px 3px;
+  margin: 2px 2px 2px 2px;
+  background: linear-gradient(#F8F8F8, #E0E0E0);
+  box-shadow: 2px 2px 3px #555;
+  cursor: pointer;
 }
 
 div.album_button_active {
-	float: left;
-	padding: 5px 3px 5px 3px;
-	margin: 2px 2px 2px 2px;
-	background: linear-gradient(#E0E0E0, #B0B0B0);
-	box-shadow: 2px 2px 3px #555;
-	cursor: pointer;
+  float: left;
+  padding: 5px 3px 5px 3px;
+  margin: 2px 2px 2px 2px;
+  background: linear-gradient(#E0E0E0, #B0B0B0);
+  box-shadow: 2px 2px 3px #555;
+  cursor: pointer;
 }
 
 a.album {
-	color: #333;
-	padding: 5px 5px 5px 5px;
-	text-decoration: none;
+  color: #333;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
 }
 
 #albuminfo {
-	position: relative;
-	top: inherit;
-	padding: 10px 10px 0px 10px;
-	margin: 10px 0px 5px 15px;
+  position: relative;
+  top: inherit;
+  padding: 10px 10px 0px 10px;
+  margin: 10px 0px 5px 15px;
 
   h3 {
     padding: 0;
@@ -69,8 +69,8 @@ a.album {
 }
 
 #dmns_logo_small { //This is only used in the temp album description
-	float: left;
-	margin: 0 6px 6px 0;
+  float: left;
+  margin: 0 6px 6px 0;
 }
 
 
@@ -79,160 +79,160 @@ a.album {
 //video blocks
 
 ul.library {
-	list-style-type: none;
-	margin: 0;
-	background-color: transparent;
-	padding: 0 0 10px 0;
-	min-width: 920px;
+  list-style-type: none;
+  margin: 0;
+  background-color: transparent;
+  padding: 0 0 10px 0;
+  min-width: 920px;
 }
 
 li.lib_sort {
-	position: relative;
-	padding: 5px 10px 0px 10px;
-	margin: 15px 0px 0px 0px;
-	clear: both;
+  position: relative;
+  padding: 5px 10px 0px 10px;
+  margin: 15px 0px 0px 0px;
+  clear: both;
 
-	a { color: #333 }
-	a:hover { color: #888;}
+  a { color: #333 }
+  a:hover { color: #888;}
 }
 
 li.library {
-	position: relative;
-	padding: 5px 10px 5px 10px;
-	margin: 10px 0px 20px 0px;
-	clear: both;
-	height: 200px;
-	text-overflow: ellipsis;
-	overflow: hidden;
+  position: relative;
+  padding: 5px 10px 5px 10px;
+  margin: 10px 0px 20px 0px;
+  clear: both;
+  height: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
-	a {
-		color: #F0F0F0;
-	}
+  a {
+    color: #F0F0F0;
+  }
 
-	a:hover {
-		color: #333;
-	}
+  a:hover {
+    color: #333;
+  }
 }
 
 @keyframes vid_rolldown {
-	0% {max-height: 200px;}
-	100% {max-height: 10000px;}
+  0% {max-height: 200px;}
+  100% {max-height: 10000px;}
 }
 
 @-webkit-keyframes vid_rolldown {
-	0% {max-height: 200px;}
-	100% {max-height: 10000px;}
+  0% {max-height: 200px;}
+  100% {max-height: 10000px;}
 }
 
 @keyframes vid_rollup {
-	0% {height: 500px;}
-	100% {height: 200px;}
+  0% {height: 500px;}
+  100% {height: 200px;}
 }
 
 @-webkit-keyframes vid_rollup {
-	0% {height: 500px;}
-	100% {height: 200px;}
+  0% {height: 500px;}
+  100% {height: 200px;}
 }
 
 .vid_closebox {
-	position: absolute;
-	z-index: 9000;
-	top: 0px;
-	right: 0px;
-	text-align: center;
-	display: none;
+  position: absolute;
+  z-index: 9000;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  display: none;
 }
 
 img.closebox {
-	position: absolute;
-	top: 8px;
-	right: 10px;
-	//padding: 2px 2px 2px 2px;
-	width: 15px;
-	height: 15px;
-	opacity: 0.7;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  //padding: 2px 2px 2px 2px;
+  width: 15px;
+  height: 15px;
+  opacity: 0.7;
   cursor: pointer;
 }
 
 h2.expanded_title {
-	font-size: 20px;
-	margin: 15px 50px 0px 50px;
-	display: none;
-	text-decoration: none;
-	line-height: 22px;
-	color: #F0F0F0;
+  font-size: 20px;
+  margin: 15px 50px 0px 50px;
+  display: none;
+  text-decoration: none;
+  line-height: 22px;
+  color: #F0F0F0;
   cursor: pointer;
 }
 
 h2.vid_title {
-	font-size: 16px;
-	margin: 0 0 3px 0;
-	display: normal;
-	text-decoration: none;
-	line-height: 18px;
-	color: #333;
+  font-size: 16px;
+  margin: 0 0 3px 0;
+  display: normal;
+  text-decoration: none;
+  line-height: 18px;
+  color: #333;
 }
 
 div.video_thumbnail {
-	float: left;
-	padding: 0;
-	height: 180px;
-	width: 320px;
-	margin: 2px 15px 15px 0px;
-	border: 1px solid #555;
-	box-shadow: 3px 3px 4px #555;
+  float: left;
+  padding: 0;
+  height: 180px;
+  width: 320px;
+  margin: 2px 15px 15px 0px;
+  border: 1px solid #555;
+  box-shadow: 3px 3px 4px #555;
 }
 
 //div.video_thumbnail_empty {
-//	float: left;
-//	padding: 0;
-//	padding-right: 15px;
-//	padding-bottom: 15px;
-//	margin: 2px 5px 0px 0px;
+//  float: left;
+//  padding: 0;
+//  padding-right: 15px;
+//  padding-bottom: 15px;
+//  margin: 2px 5px 0px 0px;
 //}
 
 img.vid_thumbnail {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 div.description_block {
-	height: 170px;
-	overflow: hidden;
-	line-height: 13px; 
-	max-width: 900px;
+  height: 170px;
+  overflow: hidden;
+  line-height: 13px; 
+  max-width: 900px;
 }
 
 span.vid_info {
-	margin: 0px 0px 15px 0px;
-	font-size: 11px;
-	display: inline;
+  margin: 0px 0px 15px 0px;
+  font-size: 11px;
+  display: inline;
 }
 
 div.vid_info_expanded {
-	font-size: 12px;
-	margin: 1px 50px 0px 50px;
-	display: none;
+  font-size: 12px;
+  margin: 1px 50px 0px 50px;
+  display: none;
 }
 
 p.vid_description {
-	font-size: 13px;
-	min-width: 500px;
+  font-size: 13px;
+  min-width: 500px;
 }
 
 p.vimeo_link {
-	font-size: 15px;
-	text-align: center;
-	padding: 20px 0px 0px 0px;
-	display: none;
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+  display: none;
 }
 
 .playbutton {
-	position: absolute;
-	top: inherit;
-	left: inherit;
-	padding: 40px 110px 40px 110px;
-	opacity: 0.4;
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  padding: 40px 110px 40px 110px;
+  opacity: 0.4;
   cursor: pointer;
 }
 
@@ -241,25 +241,25 @@ div.video_player {
 }
 
 iframe.library_player {
-	width: 900px;
-	height: 506px;
-	border: 1px solid #666;
-	margin: 15px 50px 20px 50px;
-	animation: player_fadein 1s;
+  width: 900px;
+  height: 506px;
+  border: 1px solid #666;
+  margin: 15px 50px 20px 50px;
+  animation: player_fadein 1s;
 }
 
 @keyframes player_fadein {
-	0% {	height: 0px;
-		background-color: transparent;}
-	100% {	height: 506px;
-		background-color: #000000;}
+  0% {  height: 0px;
+    background-color: transparent;}
+  100% {  height: 506px;
+    background-color: #000000;}
 }
 
 @-webkit-keyframes player_fadein {
-	0% {	height: 0px;
-		background-color: transparent;}
-	100% {	height: 506px;
-		background-color: #000000;}
+  0% {  height: 0px;
+    background-color: transparent;}
+  100% {  height: 506px;
+    background-color: #000000;}
 }
 
 span.expandbtn {
@@ -268,13 +268,13 @@ span.expandbtn {
 }
 
 div.collapsebtn {
-	display: none;
-	width: 100%;
-	color: #F0F0F0;
-	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 10px;
-	text-align: center;
+  display: none;
+  width: 100%;
+  color: #F0F0F0;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .lightlink {
@@ -287,9 +287,9 @@ div.collapsebtn {
 }
 
 //.expand { //general class for video expand function
-//	cursor: pointer;
+//  cursor: pointer;
 //}
 //
 //.collapse {
-//	cursor: pointer;
+//  cursor: pointer;
 //}

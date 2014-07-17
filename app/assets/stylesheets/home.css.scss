@@ -6,90 +6,90 @@
 $eyecatch_width: 1020;
 
 #eyecatch_container_main {
-	width: $eyecatch_width;
-	//height: $eyecatch_height;
-	margin: 8px 0 0 0;
+  width: $eyecatch_width;
+  //height: $eyecatch_height;
+  margin: 8px 0 0 0;
 }
 
 #leftblock {
-	float: left;
-	width: 510px;
-	margin: 0;
-	padding: 0;
+  float: left;
+  width: 510px;
+  margin: 0;
+  padding: 0;
 }
 
 #left_top_container {
-	height: 66.7%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+  height: 66.7%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #middleblock {
-	float: left;
-	width: 170px; 
-	margin: 0;
-	padding: 0;
+  float: left;
+  width: 170px; 
+  margin: 0;
+  padding: 0;
 }
 
 #rightblock {
-	float: left;
-	width: 340px;
-	margin: 0;
-	padding: 0;
+  float: left;
+  width: 340px;
+  margin: 0;
+  padding: 0;
 }
 
 
 //divs to contain eyecatch images
 
 .imagebox {
-	float: left;
-	overflow: hidden;
-	margin: 0 11px 11px 0;
-	box-shadow: 3px 3px 4px #555;
-	border: 1px solid #555;
-	background-position: center;
-	background-size: cover;
-	cursor: pointer;
+  float: left;
+  overflow: hidden;
+  margin: 0 11px 11px 0;
+  box-shadow: 3px 3px 4px #555;
+  border: 1px solid #555;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 }
 
 
 #left_top_boxes {
-	width: 242px;
-	height: 136px;
-	line-height: 136px; //necessary for keeping text at bottom
+  width: 242px;
+  height: 136px;
+  line-height: 136px; //necessary for keeping text at bottom
 
 }
 
 #left_bottom {
-	width: 499px;
-	height: 136px;
-	line-height: 136px;
+  width: 499px;
+  height: 136px;
+  line-height: 136px;
 }
 
 #middle_top {
-	width: 159px;
-	height: 285px; //must add 2px for borders
-	line-height: 285px;
+  width: 159px;
+  height: 285px; //must add 2px for borders
+  line-height: 285px;
 }
 
 #middle_bottom {
-	width: 159px;
-	height: 136px;
-	line-height: 136px;
+  width: 159px;
+  height: 136px;
+  line-height: 136px;
 }
 
 
 #right_top {
-	width: 340px;
-	height: 136px;
-	line-height: 136px;
+  width: 340px;
+  height: 136px;
+  line-height: 136px;
 }
 
 #right_bottom {
-	width: 340px;
-	height: 285px;
-	line-height: 285px;
+  width: 340px;
+  height: 285px;
+  line-height: 285px;
 }
 
 
@@ -98,27 +98,27 @@ $eyecatch_width: 1020;
 
 //hover captions
 div.caption {
-	display: none;
-	z-index: 9000;
-	background-color: #ffffff;
-	opacity: 0.6;
-	position: absolute;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	line-height: inherit;
-	color: #333;
-	font-size: 14px;
-	font-weight: bold;
+  display: none;
+  z-index: 9000;
+  background-color: #ffffff;
+  opacity: 0.6;
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 span.caption { //necessary for placing text at bottom
-	display: inline-block;
-	vertical-align: bottom;
-	text-align: left;
-	line-height: 1em;
-	margin: 6px 6px 6px 6px;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: left;
+  line-height: 1em;
+  margin: 6px 6px 6px 6px;
 }
 
 
@@ -126,52 +126,52 @@ span.caption { //necessary for placing text at bottom
 //video player overlay
 
 div.overlay {
-	background-image: url(/images/overlay_bg.png);
-	z-index: 10000;
-	display: none;
-	width: 1000px;
-	height: 600px;
-	position: fixed;
+  background-image: url(/images/overlay_bg.png);
+  z-index: 10000;
+  display: none;
+  width: 1000px;
+  height: 600px;
+  position: fixed;
 }
 
 div.home_closebox {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	height: 28px;
-	width: 28px;
-	z-index: 11000;
-	opacity: 0.8;
-	cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 28px;
+  width: 28px;
+  z-index: 11000;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 div.video_holder {
-	background: transparent;
-	z-index: 10001;
-	padding: 0;
-	margin: 0;
+  background: transparent;
+  z-index: 10001;
+  padding: 0;
+  margin: 0;
 }
-	
+  
 
 iframe.player_overlay{
-	position: absolute;
-	top: 47px;
-	right: 50px;
-	border: 1px solid #666;
-	width: 900px;
-	height: 506px;
+  position: absolute;
+  top: 47px;
+  right: 50px;
+  border: 1px solid #666;
+  width: 900px;
+  height: 506px;
 }
 
 div.darkmask {
-	z-index: 9999;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	opacity: 0.6;
-	background-color: #333;
-	display: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: #333;
+  display: none;
 }
 
 
@@ -183,42 +183,42 @@ div.darkmask {
 }
 
 #banner_img {
-	box-shadow: 3px 3px 4px #555;
-	border: 1px solid #555;
+  box-shadow: 3px 3px 4px #555;
+  border: 1px solid #555;
 }
 
 #banner_text {
-	position: absolute;
-	top: inherit; 
-	margin-left: 8px;
-	margin-top: 8px;
+  position: absolute;
+  top: inherit; 
+  margin-left: 8px;
+  margin-top: 8px;
 }
 
 
 h2.homepage {
-	padding: 0px 0px 0px 0px;
-	margin: 25px 0 10px 0;
+  padding: 0px 0px 0px 0px;
+  margin: 25px 0 10px 0;
 }
 
 #homepage_text {
-	clear: both;
-	width: 1000px;
-	font-size: 12pt;
-	text-align: left;
+  clear: both;
+  width: 1000px;
+  font-size: 12pt;
+  text-align: left;
 }
 
 ul.homepage {
-	width: 1000px;
-	font-size: 12pt;
-	text-align: left;
+  width: 1000px;
+  font-size: 12pt;
+  text-align: left;
 }
 
 #homepage_textarea {
-	clear: both;
-	width: 1000px;
-	background-color: transparent;
-	margin: 0 0 0 0;
-	padding: 5px 10px 15px 10px;
+  clear: both;
+  width: 1000px;
+  background-color: transparent;
+  margin: 0 0 0 0;
+  padding: 5px 10px 15px 10px;
 }
 
 
