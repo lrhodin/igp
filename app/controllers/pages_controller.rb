@@ -51,6 +51,13 @@ class PagesController < ApplicationController
   def viewer
     if params[:video_id]
       @video_id = params[:video_id]
+      @videos = Video.all
+      @videos.each do |video|
+        if video.vid == @video_id
+            @video = video
+            break
+        end
+      end
     else
       redirect_to "/pages/library"
     end

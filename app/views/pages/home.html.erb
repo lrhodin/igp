@@ -78,6 +78,7 @@
   <div class="overlay" id="<%= video.vid %>">
     <div class="home_closebox"><%= image_tag "close.png" %></div>
     <div class="video_holder">&nbsp;</div>
+    <div class="video_caption"><p><%= link_to 'Click for video details', pages_viewer_path(:video_id => video.vid) %></p></div>
   </div>
 <% end %>
 

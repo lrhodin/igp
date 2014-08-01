@@ -1,2 +1,11 @@
-<iframe src="//player.vimeo.com/video/<%= @video_id %>?title=0&amp;byline=0&amp;portrait=0" width="500"
-height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<h1 class="viewer"><%= @video.name %></h1>
+
+<iframe class="viewer" src="//player.vimeo.com/video/<%= @video_id %>?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="viewer_title"><%= @video.name %></div>
+<div class="viewer_data">Date Uploaded: <%= @video.date %> | Albums: <%= @video.album.name.truncate(33, separator: ' ') %></div>
+<div class="viewer_desc">
+    <p class="viewer_desc"><%= raw(@video.description) %></p>
+    <p class="viewer_vimeo_link"><a href="http://vimeo.com/<%= @video.vid %>" target="_blank">View or Download on Vimeo</a></p>
+    <p class="viewer_links"><%= link_to "Home", pages_home_path %> | <%= link_to "More Videos", pages_library_path %></p>
+</div>

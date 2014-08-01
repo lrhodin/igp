@@ -1,0 +1,45 @@
+//Styles for /pages/viewer (viewer.html.erb)
+
+h1.viewer {
+    line-height: 28px;
+}
+
+div.viewer_title {
+    margin: 10px 50px 5px 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div.viewer_data {
+    margin: 5px 50px 10px 50px;
+    font-size: 12px;
+}
+
+iframe.viewer {
+    margin: 10px 50px 0px 50px;
+    width: 900px;
+    height: 506px;
+    border: 1px solid #666;
+    box-shadow: 5px 5px 6px #555;
+}
+
+div.viewer_desc {
+    margin: 0px 50px 0px 50px;
+}
+
+p.viewer_desc {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+p.viewer_vimeo_link {
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+}
+
+p.viewer_links {
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
