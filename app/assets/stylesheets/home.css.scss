@@ -2,12 +2,10 @@
 // Automatically included in application.css
 
 //Use some SASS variables
-//decreased width by factor of 0.85
 $eyecatch_width: 1020;
 
 #eyecatch_container_main {
   width: $eyecatch_width;
-  //height: $eyecatch_height;
   margin: 8px 0 0 0;
 }
 

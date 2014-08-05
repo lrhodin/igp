@@ -149,7 +149,6 @@ $(document).ready(function() {
 function expand_vid(vidblock) {
   vidblock.css({"animation":"vid_rolldown 1s", "height":"auto", "background":"linear-gradient(#B0B0B0, #888888)", "color":"#F0F0F0", "box-shadow":"0px 0px 4px 3px #333"});
   vidblock.find(".description_block").css({"height":"auto", "margin":"0px 50px 0px 50px"});
-  //vidblock.find(".video_thumbnail").toggleClass("video_thumbnail video_thumbnail_empty");
   vidblock.find(".vimeo_link").show();
   vidblock.find(".expand_hidden").hide();
   vidblock.find(".expand_visible").show();
@@ -158,8 +157,6 @@ function expand_vid(vidblock) {
 };
 
 function collapse_vid(vidblock) {
-  //vidblock.find("iframe").hide();
-  //vidblock.find(".video_thumbnail_empty").toggleClass("video_thumbnail_empty video_thumbnail");
   vidblock.find(".description_block").css({"height":"170px", "margin":""});
   vidblock.find(".vimeo_link").hide();
   vidblock.find(".expand_visible").hide();
