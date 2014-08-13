@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate
 
   # GET /albums
   # GET /albums.json
@@ -31,6 +32,8 @@ class AlbumsController < ApplicationController
         album.description = vimeo_album["description"]
         album.save
         $album = album
+      else
+        $album = Album.where(:name => vimeo_album["title"]).take
       end
       videos = Vimeo::Simple::Album.videos(vimeo_album["id"])
       videos.each { |video_info|
