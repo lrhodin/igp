@@ -2,6 +2,13 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate
 
+  # Password needed to change any of this
+  def authenticate
+    authenticate_or_request_with_http_basic('Administration') do |username, password|
+      username == 'igp' && password == 'ehkra!Q2w#e'
+    end
+  end
+
   # GET /albums
   # GET /albums.json
   def index
