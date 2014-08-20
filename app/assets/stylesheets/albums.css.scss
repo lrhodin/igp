@@ -1,3 +1,11 @@
 // Place all the styles related to the Albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#album_videos {
+  max-width: 1100px;
+  min-width: 200px;
+  padding: 20px 20px 20px 30px;
+  background-color: #888;
+}
+

@@ -4,6 +4,7 @@
 
 <ul class="library">
   <% @albums.each do |album| %>
+    <% @videos = album.videos %>
     <li>
       <h4>Album title: <%= album.name %></h4>
     </li>
@@ -17,6 +18,34 @@
     <li>
       <hr/>
     </li>
+
+    <div id="album_videos">
+
+    <% @videos.each do |video| %>
+      <div class="vidlist_thumb"><%= image_tag video.thumb, class: 'vidlist_thumb' %></div>
+
+      <p><strong>Date:</strong> <%= video.date %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Vimeo ID:</strong> <%= video.vid %></p>
+      <p><strong>Name:</strong> <%= video.name %></p>
+      <p><strong>Description:</strong> <%= video.description.truncate(300, separator: ' ') %></p>
+      <p><strong>Album(s):</strong> <%= video.album.name %></p>
+      <p><strong>Frontpage:</strong> <%= video.frontpage %></p>
+
+      <p class="vidlist_options_block"><strong>
+        <%= link_to 'Vimeo Page', "http://vimeo.com/#{video.vid}", target: '_blank' %> |
+        <% if video.frontpage == true then %>
+          <%= link_to("Remove from Frontpage", video_path(video.id, :video => {:frontpage => false}), :method => :put) %> |
+        <% else %>  
+          <%= link_to("Add to Frontpage", video_path(video.id, :video => {:frontpage => true}), :method => :put) %> |
+        <% end %>
+        <%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+      </p>
+
+      <div class="vidlist_divider">&nbsp;</div>
+
+    <% end %>
+    </div>
+ 
+
   <% end %>
 </ul>
 
