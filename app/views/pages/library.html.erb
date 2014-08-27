@@ -66,13 +66,14 @@
     </div>
     <div class="expand_visible video_player" id="<%= video.vid %>_player">
     </div>
-  
+
     <div class="description_block">
       <h2 class="expand_hidden vid_title"><span class="lightlink"><%= video.name %></span></h2>
       <span class="expand_hidden vid_info">Date Uploaded: <%= video.date %> | Albums: <%= video.album.name.truncate(33, separator: ' ') %></span>
       <p class="vid_description"><%= raw(video.description) %></p>
       <p class="vimeo_link"><a href="http://vimeo.com/<%= video.vid %>" target="_blank">View or Download on Vimeo</a></p>
-    
+      <p class="permalink"><%= link_to 'Permalink', pages_viewer_path(:video_id => video.vid) %></p>
+
       <div class="expand_visible collapsebtn"><span class="darklink">Show Less</span></div>
     </div>
     <span class="expand_hidden lightlink expandbtn">Show More</span>
