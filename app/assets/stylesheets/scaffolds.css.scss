@@ -134,8 +134,9 @@ li.nav_button_active {
   background: linear-gradient(#E0E0E0, #B0B0B0);
 }
 
-
-
+#pdbutton { //Public Displays button must be slightly wider
+    width: 120px;
+}
 
 #notice {
   color: green;

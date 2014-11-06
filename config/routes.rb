@@ -8,6 +8,7 @@ Igp::Application.routes.draw do
   get "pages/supporters"
   get "pages/staff"
   get "pages/close_video"
+  get "pages/displays"
   resources :videos
   resources :albums
 

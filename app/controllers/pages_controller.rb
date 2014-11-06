@@ -73,4 +73,8 @@ class PagesController < ApplicationController
     render 'staff'
   end
 
+  def displays
+    render 'displays'
+  end
+
 end
