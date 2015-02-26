@@ -76,6 +76,8 @@ li.supporters {
   padding: 10px auto 10px auto;
   margin: 10px 20px 10px 60px;
   text-align: center;
+  font-size: 22px;
+  line-height: 32px;
 }
 
 .supporter_block {
@@ -86,17 +88,6 @@ li.supporters {
   width: 250px;
 }
 
-p.supporter_caption {
-  font-size: 18px;
-}
-
-span.supporter_textonly {
-  padding-right: 45px; 
-  padding-left: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 26px;
-}
 
 hr {
   clear: both;
