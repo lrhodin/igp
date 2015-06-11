@@ -18,12 +18,13 @@
   top: 0px;
   left: 15px;
   margin-right: 20px;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 10px 10px 10px;
   min-width: 900px;
   min-height: 20px;
   background: linear-gradient(#F0F0F0, #D8D8D8);
   box-shadow: 2px 2px 3px #555;
   z-index: 999;
+  overflow: hidden;
 }
 
 div.album_button {
